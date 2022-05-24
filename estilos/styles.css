@@ -1,6 +1,7 @@
-html{
+html,body{
     font-family: sans-serif;
-    background-color: #231f20ff;
+    text-align: center;
+    background-color: #231f20ff !important;
     color: #efe6ddff;
 }
 /*
@@ -21,4 +22,7 @@ tr:hover,
 td:hover,
 th{
     background-color: #7ebdc2ff;
+}
+#provincia{
+    background-color: #231f20ff;
 }
