@@ -1,0 +1,28 @@
+html,body{
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #231f20ff !important;
+    color: #efe6ddff;
+}
+/*
+$raisin-black: #231f20ff;
+$international-orange-golden-gate-bridge: #bb4430ff;
+$middle-blue: #7ebdc2ff;
+$medium-champagne: #f3dfa2ff;
+$linen: #efe6ddff;
+*/
+table,th,tr,td{
+    border: 3px solid #7ebdc2ff;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+}
+
+tr:hover,
+td:hover,
+th{
+    background-color: #7ebdc2ff;
+}
+#provincia{
+    background-color: #231f20ff;
+}
