@@ -19,8 +19,4 @@ function listaProvincias(){
 
     return $arrayObjCasas;
 }
-
-$arrayObjCasas=listaProvincias();
-var_dump($arrayObjCasas);
-
 ?>
