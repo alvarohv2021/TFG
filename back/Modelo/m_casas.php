@@ -7,19 +7,20 @@ function listaProvincias(){
     global $coon;
 
     $query = $coon->query("SELECT * FROM provincias");
-    $arrayProvincias = $query->fetch_all(MYSQLI_ASSOC);
+    $arrayCasas = $query->fetch_all(MYSQLI_ASSOC);
 
-    $arrayObjProvincias = [];
+    $arrayObjCasas = [];
 
-    for ($i=0; $i < count($arrayProvincias); $i++) { 
-        $arrayObjProvincias[$i] = new Provincias($arrayProvincias[$i]["id"],$arrayProvincias[$i]["Nombre"],
-        $arrayProvincias[$i]["Poblacion"],$arrayProvincias[$i]["Densidad"],$arrayProvincias[$i]["Superficie"]);
+    for ($i=0; $i < count($arrayCasas); $i++) { 
+        $arrayObjCasas[$i] = new Casa($arrayCasas[$i]["id"],$arrayCasas[$i]["Tipo"],
+        $arrayCasas[$i]["Descripcion"],$arrayCasas[$i]["Habitaciones"],$arrayCasas[$i]["Precio"],$arrayCasas[$i]["Oferta"]
+        ,$arrayCasas[$i]["Metros"],$arrayCasas[$i]["Provincia"],$arrayCasas[$i]["Propietario"]);
     }
 
-    return $arrayObjProvincias;
+    return $arrayObjCasas;
 }
 
-$arrayObjProvincias=listaProvincias();
-var_dump($arrayObjProvincias);
+$arrayObjCasas=listaProvincias();
+var_dump($arrayObjCasas);
 
 ?>
