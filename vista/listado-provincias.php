@@ -11,7 +11,7 @@ include_once ("../Controladores/c_casas.php");
         <th>Superficie (㎢)</th>
         <th>Numero de ofertas</th>
     </tr>
-<?php
+    <?php
 for ($i=0; $i < count($objProvincias); $i++) { 
     $numCasasProvincia=0;
     for ($j=0; $j < count($objCasas); $j++) { 
@@ -33,8 +33,8 @@ for ($i=0; $i < count($objProvincias); $i++) {
 
 <!-- Script para hacer de las filas un link que pasara por el metodo $_GET el id de la provincia clicada-->
 <script>
-    function myFunction(x){
-        window.open("casas-provincia.php?idProvincia="+x)
-    }
+function myFunction(x) {
+    window.open("casas-provincia.php?idProvincia=" + x)
+}
 </script>
 <link href="../estilos/styles.css" type="text/css" rel="stylesheet">
