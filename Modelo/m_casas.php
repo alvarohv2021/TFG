@@ -1,12 +1,12 @@
 <?php
 
 require_once("../BD/bd.php");
-include_once("../Entidades/Provincias.php");
+include_once("../Entidades/Casas.php");
 
-function listaProvincias(){
+function listaCasas(){
     global $coon;
 
-    $query = $coon->query("SELECT * FROM provincias");
+    $query = $coon->query("SELECT * FROM casas");
     $arrayCasas = $query->fetch_all(MYSQLI_ASSOC);
 
     $arrayObjCasas = [];

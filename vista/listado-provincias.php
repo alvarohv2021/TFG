@@ -1,7 +1,7 @@
-
 <?php
+include_once ("../Controladores/c_provincias.php");
+include_once ("../Controladores/c_casas.php");
 
-include_once ("../modelo/api.php");
 ?>
 <table>
     <tr>
@@ -12,22 +12,21 @@ include_once ("../modelo/api.php");
         <th>Numero de ofertas</th>
     </tr>
 <?php
-for ($i=0; $i < count($provincias); $i++) { 
+for ($i=0; $i < count($objProvincias); $i++) { 
     $numCasasProvincia=0;
-    for ($j=0; $j < count($casas); $j++) { 
-        if ($casas[$j]["Provincia"]==$provincias[$i]["id"]) {
+    for ($j=0; $j < count($objCasas); $j++) { 
+        if ($objCasas[$j]->getProvincia()==$objProvincias[$i]->getId()) {
             $numCasasProvincia++;
         }
     }
     echo 
-    "<tr onclick='myFunction(".$provincias[$i]["id"].")'>
-            <td>".$provincias[$i]["Nombre"]."</td>
-            <td>".$provincias[$i]["Poblacion"]."</td>
-            <td>".$provincias[$i]["Densidad"]."</td>
-            <td>".$provincias[$i]["Superficie"]."</td>
+    "<tr onclick='myFunction(".$objProvincias[$i]->getId().")'>
+            <td>".$objProvincias[$i]->getNombre()."</td>
+            <td>".$objProvincias[$i]->getPoblacion()."</td>
+            <td>".$objProvincias[$i]->getDensidad()."</td>
+            <td>".$objProvincias[$i]->getSuperficie()."</td>
             <td>".$numCasasProvincia."</td>
-    </tr>
-";
+    </tr>";
 }
 ?>
 </table>
