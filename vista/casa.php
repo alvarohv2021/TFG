@@ -1,5 +1,5 @@
 <?php
-include_once ("../modelo/api.php");
+include_once("../Controladores/c_casas.php");
 if(isset($_GET["idCasa"])){
 
     $idCasa=$_GET["idCasa"];
