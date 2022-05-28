@@ -1,5 +1,5 @@
 <head>
-    <title>Lista de casas</title>
+    <title>Lista de objCasas</title>
     <link href="../estilos/styles.css" type="text/css" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
     <style>
@@ -12,13 +12,13 @@
     </style>
 </head>
 <?php
-include_once ("../modelo/api.php");
+include_once ("../Controladores/c_casas.php");
 if(isset($_GET["idProvincia"])){
 
     $idProvincia=$_GET["idProvincia"];
-    $hayCasas=false;
-    for ($i=0; $i < count($casas); $i++) { 
-        if ($casas[$i]["Provincia"]==$idProvincia) {
+    $hayobjCasas=false;
+    for ($i=0; $i < count($objCasas); $i++) { 
+        if ($objCasas[$i]->getProvincia()==$idProvincia) {
             echo 
             "<div class='container'>
             <div class='row'>
@@ -28,7 +28,7 @@ if(isset($_GET["idProvincia"])){
                 <div class='col-6'>
                     <div class='row'>
                         <div class='col-12'>
-                           <a href='casa.php?idCasa=".$casas[$i]["id"]."'><p>".$casas[$i]["Descripcion"]."</p></a>
+                           <a href='casa.php?idCasa=".$objCasas[$i]->getId()."'><p>".$objCasas[$i]->getDescripcion()."</p></a>
                         </div>
                         <div class='col-12'>
                             <p>Descripcion</p>
@@ -38,29 +38,29 @@ if(isset($_GET["idProvincia"])){
                 <div class='col-3'>
                     <div class='row'>
                         <div class='col-12'>
-                            <p>".$casas[$i]["Tipo"]."/".$casas[$i]["Oferta"]."</p>
+                            <p>".$objCasas[$i]->getTipo()."/".$objCasas[$i]->getOferta()."</p>
                         </div>
                         <div class='col-12'>
-                            <p>".$casas[$i]["Precio"]."€</p>
+                            <p>".$objCasas[$i]->getPrecio()."€</p>
                         </div>
                         <div class='col-6'>
-                            <p>".$casas[$i]["Habitaciones"]." hab.</p>
+                            <p>".$objCasas[$i]->getHabitaciones()." hab.</p>
                         </div>
                         <div class='col-6'>
-                            <p>".$casas[$i]["Metros_cuadrados"]." ㎡</p>
+                            <p>".$objCasas[$i]->getMetrosCuadrados()." ㎡</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>";
-            $hayCasas=true;
+            $hayobjCasas=true;
         }else{
             
         }
         
     }
     echo "</table>";
-    if (!$hayCasas) {
+    if (!$hayobjCasas) {
         # code...
         echo "<h1>No se encuentran ofertas en esta provincia</h1>";
     }
