@@ -6,24 +6,29 @@ if (isset($_POST['password'])) {
     if ($_POST['password'] == $_POST['cPassword']) {
         $cPassword = false;
 
-        if (isset($_POST['name']) & isset($_POST['email'])) {
+        if (isset($_POST['name']) && isset($_POST['email']) && $_POST['name'] != '' && $_POST['email'] != '') {
             $usuario = insertarUsuarios($_POST['name'], $_POST['email'], $_POST['password']);
-            $alertRegistro=false;
-            
+
             if ($usuario) {
-                
-            }else{
-                $alertRegistro=true;
+                $alertRegistro = false;
+            } else {
+                $alertRegistro = true;
             }
+        } elseif (!isset($_POST['name']) | $_POST['name'] == '') {
+            echo "Introduce un nombre valido";
+        } elseif (!isset($_POST['email']) | $_POST['email'] == '') {
+            echo "Introduce un correo valido";
         }
     } else {
         $cPassword = true;
     }
 
-    header("Location: ../Vista/registro.php?cPassword=" . $cPassword."&alertRegistro=".$alertRegistro);
+    var_dump(comprobarNombre($_POST['name']));
+    var_dump(comprobarCorreo($_POST['email']));
+    // header("Location: ../Vista/registro.php?cPassword=" . $cPassword . "&alertRegistro=" . $alertRegistro);
 }
 
-/*if (isset($_POST['password'])) {
+    /*if (isset($_POST['password'])) {
     $alertRegistro=false;
     if ($_POST['password'] == $_POST['cPassword']) {
         $cPassword = false;
