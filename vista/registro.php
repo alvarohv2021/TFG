@@ -38,12 +38,12 @@
             </div>
 
             <div class="col-6 float-left">
-                <button type="submit" class="btn btn-success w-100 mb-2">Sign In</button>
+                <button type="submit" class="btn btn-primary w-100 mb-2">Register</button>
             </div>
         </form>
-        <div class="col-6">
+        <div class="col-6 offset-6">
             <a href="inicio.php">
-                <button class="btn btn-primary w-100 mb-2">Register</button>
+            <button class="btn btn-success w-100 mb-2">Sign In</button>
             </a>
         </div>
 
