@@ -4,14 +4,23 @@ include_once("../Modelo/m_usuario.php");
 if (isset($_POST['password'])) {
 
     if ($_POST['password'] == $_POST['cPassword']) {
-        $cPassword=false;
-        header("Location: ../Vista/registro.php?cPassword=".$cPassword);
-       return ;
-    }else{
-        $cPassword=true;
-        header("Location: ../Vista/registro.php?cPassword=".$cPassword);
+        $cPassword = false;
+
+        if (isset($_POST['name']) & isset($_POST['email'])) {
+            $usuario = insertarUsuarios($_POST['name'], $_POST['email'], $_POST['password']);
+            $alertRegistro=false;
+            
+            if ($usuario) {
+                
+            }else{
+                $alertRegistro=true;
+            }
+        }
+    } else {
+        $cPassword = true;
     }
 
+    header("Location: ../Vista/registro.php?cPassword=" . $cPassword."&alertRegistro=".$alertRegistro);
 }
 
 /*if (isset($_POST['password'])) {
@@ -42,4 +51,3 @@ if (isset($_POST['password'])) {
         
     }
 }*/
-?>

@@ -50,12 +50,13 @@
     </form>
     <?php
 error_reporting(E_ERROR | E_PARSE);
-var_dump($cPassword);
+var_dump($_GET["cPassword"]);
 if ($_GET["cPassword"]) { ?>
     <script>
     alert("Las contraseñas no coinciden")
     </script>
     <?php }
+    var_dump($_GET["alertRegistro"]);
 if ($_GET["alertRegistro"]){?>
     <script>
     alert("Este usuario no esta disponible")
