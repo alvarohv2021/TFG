@@ -10,14 +10,22 @@ if (isset($_POST['password'])) {
 
         if (isset($_POST['name']) && isset($_POST['email']) && $_POST['name'] != '' && $_POST['email'] != '') {
 
-            $usuario = insertarUsuarios($_POST['name'], $_POST['email'], $_POST['password']);
+            $estadoInsercion = insertarUsuarios($_POST['name'], $_POST['email'], $_POST['password']);
 
-            if ($usuario && comprobarNombre($_POST['name'])) {
+            if ($estadoInsercion && comprobarNombre($_POST['name'])) {
 
                 $usuarioUsado = true;
-            } else if ($usuario && comprobarCorreo($_POST['email'])) {
+            } else if ($estadoInsercion && comprobarCorreo($_POST['email'])) {
 
                 $correoUsado = true;
+            } else {
+
+                $usuario = comprobarUsuario($_POST['name'], $_POST['email']);
+                if (isset($usuario) && $usuario->id != 0) {
+
+                    $_SESSION['Usuario'] = $usuario;
+                    header("Location: ../Controladores/c_provincias.php");
+                }
             }
         }
     } else {
