@@ -32,8 +32,7 @@
                 </div>
                 <label class="sr-only" for="cPassword">confirm password</label>
                 <div class="col-6">
-                    <input type="password" class="form-control mb-2 mr-2" name="cPassword"
-                        placeholder="Confirm Password">
+                    <input type="password" class="form-control mb-2 mr-2" name="cPassword" placeholder="Confirm Password">
                 </div>
             </div>
 
@@ -49,19 +48,22 @@
         </div>
     </form>
     <?php
-error_reporting(E_ERROR | E_PARSE);
-var_dump($_GET["cPassword"]);
-if ($_GET["cPassword"]) { ?>
-    <script>
-    alert("Las contraseñas no coinciden")
-    </script>
+    error_reporting(E_ERROR | E_PARSE);
+    if ($_GET["cPassword"]) { ?>
+        <script>
+            alert("Las contraseñas no coinciden")
+        </script>
     <?php }
-    var_dump($_GET["alertRegistro"]);
-if ($_GET["alertRegistro"]){?>
-    <script>
-    alert("Este usuario no esta disponible")
-    </script>
-    <?php }?>
+    if ($_GET["usuarioUsado"]) { ?>
+        <script>
+            alert("Este usuario no esta disponible")
+        </script>
+    <?php }
+    if ($_GET["correoUsado"]) { ?>
+        <script>
+            alert("Este correo no esta disponible")
+        </script>
+    <?php } ?>
 </body>
 
 </html>

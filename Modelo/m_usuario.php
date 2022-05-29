@@ -5,7 +5,7 @@ function comprobarCorreo($email)
 {
     global $coon;
 
-    $query = $coon->query("SELECT * FROM usuarios where Username ='" . $email . "'");
+    $query = $coon->query("SELECT * FROM usuarios where Email ='" . $email . "'");
 
     //comprobacion del numero de filas que devuleve la query
     if ($query->num_rows == 0) {
@@ -31,7 +31,7 @@ function comprobarNombre($nombre)
 
 function insertarUsuarios($nombre, $email, $password)
 {
-    if (comprobarCorreo($email) && comprobarNombre($nombre)) {
+    if (comprobarCorreo($email) | comprobarNombre($nombre)) {
 
         return true;
 
@@ -40,8 +40,8 @@ function insertarUsuarios($nombre, $email, $password)
         global $coon;
 
         $password = password_hash($password, PASSWORD_DEFAULT);
-        //$sql = "insert into Usuarios(Email,Username,Password) values ('" . $email . "','" . $nombre . "','" . $password . "')";
-        //$coon->query($sql);
+        $sql = "insert into Usuarios(Email,Username,Password) values ('" . $email . "','" . $nombre . "','" . $password . "')";
+        $coon->query($sql);
 
         return false;
     }
