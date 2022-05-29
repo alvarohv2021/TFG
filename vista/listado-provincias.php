@@ -66,7 +66,7 @@ for ($i=0; $i < count($objProvincias); $i++) {
 <!-- Script para hacer de las filas un link que pasara por el metodo $_GET el id de la provincia clicada-->
 <script>
 function myFunction(x) {
-    window.open("../Controladores/c_casas?idProvincia=" + x)
+    window.open("../Controladores/c_casas.php?idProvincia=" + x)
 }
 </script>
 <link href="../estilos/styles.css" type="text/css" rel="stylesheet">

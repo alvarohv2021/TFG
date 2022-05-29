@@ -1,5 +1,6 @@
 <?php
 require_once("../BD/bd.php");
+include_once("../Entidades/Provincias.php");
 
 function listaProvincias(){
     global $coon;
