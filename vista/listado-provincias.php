@@ -1,5 +1,4 @@
 <?php
-include_once ("../Controladores/c_provincias.php");
 include_once ("../Controladores/c_casas.php");
 
 ?>
