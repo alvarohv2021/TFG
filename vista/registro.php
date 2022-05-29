@@ -56,7 +56,7 @@ if ($_GET["cPassword"]) { ?>
     alert("Las contraseñas no coinciden")
     </script>
     <?php }
-if ($_GET["cPassword"]){?>
+if ($_GET["alertRegistro"]){?>
     <script>
     alert("Este usuario no esta disponible")
     </script>
