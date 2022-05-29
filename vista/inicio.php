@@ -36,7 +36,7 @@
             </div>
         </form>
         <div class="col-6 offset-6">
-            <a href="../Controladores/c_registro.php">
+            <a href="registro.php">
                 <button class="btn btn-primary w-100 mb-2">Register</button>
             </a>
         </div>

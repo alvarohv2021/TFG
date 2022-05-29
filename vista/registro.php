@@ -8,8 +8,9 @@
 </head>
 
 <body>
-    <form method="post" action="../Controladores/c_registro.php">
-        <div class="container bg-danger rounded mt-5">
+    <div class="container bg-danger rounded mt-5">
+        <form method="post" action="../Controladores/c_registro.php">
+
             <div class="form-group row">
                 <div class="col-3 text-center mt-4">
                     <h5><a class="text-light" href="../Controladores/c_lista.php" style="text-decoration: none">Spain
@@ -36,17 +37,18 @@
                 </div>
             </div>
 
-            <div class="form-group row">
-                <div class="col-6">
-                    <button class="btn btn-primary w-100 mb-2">Register</button>
-                </div>
-                <div class="col-6">
-                    <button class="btn btn-success w-100 mb-2">Sign In</button>
-                </div>
+            <div class="col-6 float-left">
+                <button type="submit" class="btn btn-success w-100 mb-2">Sign In</button>
             </div>
-
+        </form>
+        <div class="col-6">
+            <a href="inicio.php">
+                <button class="btn btn-primary w-100 mb-2">Register</button>
+            </a>
         </div>
-    </form>
+
+    </div>
+
     <?php
     error_reporting(E_ERROR | E_PARSE);
     if ($_GET["cPassword"]) { ?>
