@@ -1,7 +1,6 @@
 <?php
 
 require_once("../BD/bd.php");
-include_once("../Entidades/Casas.php");
 
 function listaCasas(){
     global $coon;
