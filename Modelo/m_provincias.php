@@ -17,4 +17,16 @@ function listaProvincias(){
 
     return $arrayObjProvincias;
 }
+
+function getProvinciaById($idProvincia){
+    global $coon;
+
+    $query = $coon->query("SELECT * FROM provincias WHERE id=".$idProvincia);
+    $arrayProvincias = $query->fetch_all(MYSQLI_ASSOC);
+
+    $provincia = new Provincias($arrayProvincias["id"],$arrayProvincias["Nombre"],
+    $arrayProvincias["Poblacion"],$arrayProvincias["Densidad"],$arrayProvincias["Superficie"]);
+
+    return $provincia;
+}
 ?>

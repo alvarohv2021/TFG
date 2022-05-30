@@ -36,17 +36,15 @@ function listaCasasProvincia($idProvincia){
     return $arrayObjCasas;
 }
 
-function casa($idCasa){
+function getCasaById($idCasa){
     global $coon;
 
     $query = $coon->query("SELECT * FROM casas WHERE id=".$idCasa);
     $arrayCasa = $query->fetch_all(MYSQLI_ASSOC);
 
-    $arrayObjCasa = [];
-
-    $arrayObjCasa[0] = new Casa($arrayCasa[0]["id"],$arrayCasa[0]["Tipo"],
+    $objCasa = new Casa($arrayCasa[0]["id"],$arrayCasa[0]["Tipo"],
     $arrayCasa[0]["Descripcion"],$arrayCasa[0]["Habitaciones"],$arrayCasa[0]["Precio"],$arrayCasa[0]["Oferta"]
     ,$arrayCasa[0]["Metros"],$arrayCasa[0]["Provincia"],$arrayCasa[0]["Propietario"]);
 
-    return $arrayObjCasa;
+    return $objCasa;
 }

@@ -5,40 +5,7 @@
 </head>
 
 <body>
-    <!--**************************Barra Superior**************************-->
-    <div class="container-fluid bdorado negro">
-        <div class="row ">
-            <div class="col-8">
-                <a href="../Controladores/c_provincias.php">
-                    <h1>Spain Travels</h1>
-                </a>
-            </div>
-            <?php
-            if ($_SESSION['Usuario'] != null) { ?>
-                <div class="col-2 pt-3">
-                    <p><?php echo $_SESSION['Usuario']->username ?></p>
-                </div>
-                <div class='col-2 pt-3'>
-                    <a href='../Controladores/logOut.php?sesion=false' style='text-decoration: none'>
-                        <p class="negro">
-                            Cerar Sesion</p>
-                    </a>
-                </div>
-            <?php } else { ?>
-                <div class='col-2 pt-3 '>
-                    <a href='../Controladores/c_inicio.php' style='text-decoration: none'>
-                        <p class="negro">Iniciar Sesion</p>
-                    </a>
-                </div>
-                <div class="col-2 pt-3 negro">
-
-                    <a href='../Vista/registro.php' style='text-decoration: none'>
-                        <p class="negro">Registrarse</p>
-                    </a>
-                </div>
-            <?php } ?>
-        </div>
-    </div>
+    <?php include_once("barraSuperior.php") ?>
     <!--**************************Contenido Principal**************************-->
     <?php
     $hayobjCasas = false;

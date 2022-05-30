@@ -66,3 +66,19 @@ function comprobarUsuario($nombre, $password)
         return new Usuario(0, "-", "-", "-");
     }
 }
+
+function getListaFavoritos($idUser)
+{
+    global $coon;
+
+    $query = $coon->query("SELECT casas.* FROM usuarios as usr
+    left join favoritos as fav on usr.id = fav.id_usuario
+    left join casas on fav.id_casa = casas.id
+    where usr.id =" . $idUser);
+
+    $casasFavoritas = $query->fetch_all(MYSQLI_ASSOC);
+    for ($i=0; $i < count($casasFavoritas); $i++) { 
+        $arrayObjetosCasasFavoritas[$i]=getCasaById($casasFavoritas[$i]['id']);
+    }
+    return $arrayObjetosCasasFavoritas;
+}
