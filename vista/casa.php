@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <script src="https://kit.fontawesome.com/d1d9302ab1.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d08437ea27.js" crossorigin="anonymous"></script>
     <link href="../estilos/styles.css" type="text/css" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
 </head>
@@ -11,7 +11,7 @@
     <style>
 
     </style>
-<?php include_once("barraSuperior.php") ?>
+    <?php include_once("barraSuperior.php") ?>
     <!--**************************Contenido Principal**************************-->
     <div class='container bdorado mt-4 grande'>
         <div class='row'>
@@ -35,8 +35,22 @@
             <div class='col-1'>
                 <p><?php echo $objCasa->getPrecio() ?>€</p>
             </div>
-            <div class='col12'>
+            <div class='col-11'>
                 <p>Descripcion</p>
+            </div>
+            <div class="col-1">
+
+                <?php
+                $arrayIdUsuarios = getIdUsuariosFromListaFavritosCasa($objCasa->getId());
+                if (isset($arrayIdUsuarios)) {
+                    if (in_array($usuario->id, $arrayIdUsuarios)) {
+                        echo '<i class="fa-solid fa-heart"></i>';
+                    } else {
+                        echo '<i class="fa-regular fa-heart"></i>';
+                    }
+                } else {
+                    echo '<i class="fa-regular fa-heart"></i>';
+                } ?>
             </div>
         </div>
     </div>
