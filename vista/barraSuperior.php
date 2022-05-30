@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <div class='col-2 pt-3'>
-                    <a href='../Controladores/logOut.php?sesion=false' style='text-decoration: none'>
+                    <a href='../Controladores/c_cerrarSesion.php?sesion=false' style='text-decoration: none'>
                         <p class="negro">
                             Cerar Sesion</p>
                     </a>
