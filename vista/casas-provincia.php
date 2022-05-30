@@ -9,7 +9,9 @@
     <div class="container-fluid bdorado negro">
         <div class="row ">
             <div class="col-8">
-                <h1>Spain Travels</h1>
+                <a href="../Controladores/c_provincias.php">
+                    <h1>Spain Travels</h1>
+                </a>
             </div>
             <?php
             if ($_SESSION['Usuario'] != null) { ?>
@@ -29,8 +31,8 @@
                     </a>
                 </div>
                 <div class="col-2 pt-3 negro">
-                    <!--Por hacer, página de registro-->
-                    <a href='../Controladores/c_registro.php' style='text-decoration: none'>
+
+                    <a href='../Vista/registro.php' style='text-decoration: none'>
                         <p class="negro">Registrarse</p>
                     </a>
                 </div>
@@ -51,7 +53,7 @@
                 <div class='col-6'>
                     <div class='row'>
                         <div class='col-12'>
-                            <a href='casa.php?idCasa=<?php echo $objCasasProvincia[$i]->getId() ?>'>
+                            <a href='../Controladores/c_casa.php?idCasa=<?php echo $objCasasProvincia[$i]->getId() ?>' target="_self">
                                 <p><?php echo $objCasasProvincia[$i]->getDescripcion() ?></p>
                             </a>
                         </div>

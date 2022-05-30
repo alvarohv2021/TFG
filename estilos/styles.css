@@ -63,11 +63,25 @@ td {
 }
 
 tr:hover,
-td:hover,
-th {
+td:hover {
     background-color: #eee0cb;
 }
 
-#provincia {
-    background-color: #07020d;
+th {
+    background-color: #000000;
+    color: #baa898;
+}
+
+.grande {
+    text-align: left;
+    font-size: x-large;
+}
+
+a:hover {
+    color: #baa898 !important;
+    text-decoration: none;
+}
+a {
+    color: #000000 !important;
+    text-decoration: none !important;
 }

@@ -13,7 +13,7 @@
 
             <div class="form-group row">
                 <div class="col-3 text-center mt-4">
-                    <h5><a class="text-light" href="../Controladores/c_lista.php" style="text-decoration: none">Spain
+                    <h5><a class="text-light" href="../Controladores/c_provincias.php" style="text-decoration: none">Spain
                             Travels</a></h5>
                 </div>
                 <div class="col-9 text-light offset-4">
