@@ -11,4 +11,8 @@ include_once("../Modelo/m_casas.php");
 
 $objCasa = getCasaById($_GET["idCasa"]);
 
+if (isset($_GET['accion'])) {
+    addOrRemoveFromFavoritos($usuario->id, $objCasa->id,$_GET['accion']);
+}
+
 include_once("../Vista/casa.php");

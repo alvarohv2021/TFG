@@ -85,23 +85,22 @@ function getIdUsuariosFromListaFavritosCasa($idCasa)
         where usr.id is not null and casas.id =" . $idCasa);
     $arrayListaIdUsuaros = $query->fetch_all(MYSQLI_ASSOC);
 
-    for ($i=0; $i < count($arrayListaIdUsuaros); $i++) { 
+    for ($i = 0; $i < count($arrayListaIdUsuaros); $i++) {
         $listaIdUsuaros[$i] = $arrayListaIdUsuaros[$i]["id"];
     }
-    
+
     return $listaIdUsuaros;
 }
 
-function addOrRemoveFromFavoritos($idUsuario, $idCasa,$accion){
-    /*global $coon;
+function addOrRemoveFromFavoritos($idUsuario, $idCasa, $accion)
+{
+    global $coon;
 
-    if ($accion=="add") {
-        $query = $coon->query("INSERT into favoritos(id_casa,id_usuario) values(". $idCasa .",". $idUsuario .")");
-    }else {
-        $query = $coon->query("delete from favoritos where id_casa = ". $idCasa ." and id_usuario = ". $idUsuario .";");
+    if ($accion == "add") {
+        $query = ("INSERT into favoritos(id_casa,id_usuario) values(" . $idCasa . "," . $idUsuario . ")");
+    } else {
+        $query = ("delete from favoritos where id_casa = " . $idCasa . " and id_usuario = " . $idUsuario . ";");
     }
 
-    $coon->query($query);*/
-
-    var_dump($idCasa,$idUsuario,$accion);
+    $coon->query($query);
 }

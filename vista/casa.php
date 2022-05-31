@@ -15,7 +15,7 @@
     <!--**************************Contenido Principal**************************-->
     <div class='container bdorado mt-4 grande'>
         <div class='row'>
-            <h1>Carrousel</p>
+            <h1>Carrousel</h1>
         </div>
 
         <div class='row bazul'>
@@ -56,10 +56,10 @@
                         function myFunction(x) {
                             if (x.classList[0] == "fa-solid") {
                                 x.classList.replace("fa-solid", "fa-regular");
-                                <?php echo addOrRemoveFromFavoritos($usuario->id, $objCasa->id, "remove") ?>
+                                this.open("../Controladores/c_casa.php?accion=remove&idCasa=" + <?php echo $objCasa->id ?>, "_self");
                             } else {
                                 x.classList.replace("fa-regular", "fa-solid");
-                                <?php echo addOrRemoveFromFavoritos($usuario->id, $objCasa->id, "add") ?>
+                                this.open("../Controladores/c_casa.php?accion=add&idCasa=" + <?php echo $objCasa->id ?>, "_self");
                             }
                         }
                     </script>
