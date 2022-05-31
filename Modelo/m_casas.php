@@ -91,3 +91,17 @@ function getIdUsuariosFromListaFavritosCasa($idCasa)
     
     return $listaIdUsuaros;
 }
+
+function addOrRemoveFromFavoritos($idUsuario, $idCasa,$accion){
+    /*global $coon;
+
+    if ($accion=="add") {
+        $query = $coon->query("INSERT into favoritos(id_casa,id_usuario) values(". $idCasa .",". $idUsuario .")");
+    }else {
+        $query = $coon->query("delete from favoritos where id_casa = ". $idCasa ." and id_usuario = ". $idUsuario .";");
+    }
+
+    $coon->query($query);*/
+
+    var_dump($idCasa,$idUsuario,$accion);
+}

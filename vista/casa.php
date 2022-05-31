@@ -44,13 +44,33 @@
                 $arrayIdUsuarios = getIdUsuariosFromListaFavritosCasa($objCasa->getId());
                 if (isset($arrayIdUsuarios)) {
                     if (in_array($usuario->id, $arrayIdUsuarios)) {
-                        echo '<i class="fa-solid fa-heart"></i>';
+                        echo '<i onclick="myFunction(this)" class="fa-solid fa-heart"></i>';
                     } else {
-                        echo '<i class="fa-regular fa-heart"></i>';
+                        echo '<i onclick="myFunction(this)" class="fa-regular fa-heart"></i>';
                     }
                 } else {
-                    echo '<i class="fa-regular fa-heart"></i>';
-                } ?>
+                    echo '<i onclick="myFunction(this)" class="fa-regular fa-heart"></i>';
+                }
+                if (isset($usuario)) { ?>
+                    <script>
+                        function myFunction(x) {
+                            if (x.classList[0] == "fa-solid") {
+                                x.classList.replace("fa-solid", "fa-regular");
+                                <?php echo addOrRemoveFromFavoritos($usuario->id, $objCasa->id, "remove") ?>
+                            } else {
+                                x.classList.replace("fa-regular", "fa-solid");
+                                <?php echo addOrRemoveFromFavoritos($usuario->id, $objCasa->id, "add") ?>
+                            }
+                        }
+                    </script>
+                <?php } else { ?>
+                    <script>
+                        function myFunction(x) {
+                            this.open("../Vista/registro.php", "_self");
+                        }
+                    </script>
+                <?php } ?>
+
             </div>
         </div>
     </div>
