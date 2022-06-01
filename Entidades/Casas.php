@@ -1,6 +1,8 @@
 <?php
+include_once("../BD/bd.php");
 
-class Casa{
+class Casa
+{
     public $id, $tipo, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario;
 
     public function __construct($id, $tipo, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario)
@@ -20,7 +22,7 @@ class Casa{
 
     /**
      * Get the value of id
-     */ 
+     */
     public function getId()
     {
         return $this->id;
@@ -30,7 +32,7 @@ class Casa{
      * Set the value of id
      *
      * @return  self
-     */ 
+     */
     public function setId($id)
     {
         $this->id = $id;
@@ -40,7 +42,7 @@ class Casa{
 
     /**
      * Get the value of tipo
-     */ 
+     */
     public function getTipo()
     {
         return $this->tipo;
@@ -50,7 +52,7 @@ class Casa{
      * Set the value of tipo
      *
      * @return  self
-     */ 
+     */
     public function setTipo($tipo)
     {
         $this->tipo = $tipo;
@@ -60,7 +62,7 @@ class Casa{
 
     /**
      * Get the value of descripcion
-     */ 
+     */
     public function getDescripcion()
     {
         return $this->descripcion;
@@ -70,7 +72,7 @@ class Casa{
      * Set the value of descripcion
      *
      * @return  self
-     */ 
+     */
     public function setDescripcion($descripcion)
     {
         $this->descripcion = $descripcion;
@@ -80,7 +82,7 @@ class Casa{
 
     /**
      * Get the value of habitaciones
-     */ 
+     */
     public function getHabitaciones()
     {
         return $this->habitaciones;
@@ -90,7 +92,7 @@ class Casa{
      * Set the value of habitaciones
      *
      * @return  self
-     */ 
+     */
     public function setHabitaciones($habitaciones)
     {
         $this->habitaciones = $habitaciones;
@@ -100,7 +102,7 @@ class Casa{
 
     /**
      * Get the value of precio
-     */ 
+     */
     public function getPrecio()
     {
         return $this->precio;
@@ -110,7 +112,7 @@ class Casa{
      * Set the value of precio
      *
      * @return  self
-     */ 
+     */
     public function setPrecio($precio)
     {
         $this->precio = $precio;
@@ -120,7 +122,7 @@ class Casa{
 
     /**
      * Get the value of oferta
-     */ 
+     */
     public function getOferta()
     {
         return $this->oferta;
@@ -130,7 +132,7 @@ class Casa{
      * Set the value of oferta
      *
      * @return  self
-     */ 
+     */
     public function setOferta($oferta)
     {
         $this->oferta = $oferta;
@@ -140,7 +142,7 @@ class Casa{
 
     /**
      * Get the value of metrosCuadrados
-     */ 
+     */
     public function getMetrosCuadrados()
     {
         return $this->metrosCuadrados;
@@ -150,7 +152,7 @@ class Casa{
      * Set the value of metrosCuadrados
      *
      * @return  self
-     */ 
+     */
     public function setMetrosCuadrados($metrosCuadrados)
     {
         $this->metrosCuadrados = $metrosCuadrados;
@@ -160,17 +162,26 @@ class Casa{
 
     /**
      * Get the value of provincia
-     */ 
+     */
     public function getProvincia()
     {
-        return $this->provincia;
+        global $coon;
+
+        $query = $coon->query("SELECT pr.Nombre FROM casas
+        left join provincias as pr on casas.Provincia = pr.id
+        where pr.id =" . $this->provincia . "
+        group by pr.id");
+
+        $nombreProvincia = $query->fetch_all(MYSQLI_ASSOC);
+
+        return $nombreProvincia[0]["Nombre"];
     }
 
     /**
      * Set the value of provincia
      *
      * @return  self
-     */ 
+     */
     public function setProvincia($provincia)
     {
         $this->provincia = $provincia;
@@ -180,7 +191,7 @@ class Casa{
 
     /**
      * Get the value of propietario
-     */ 
+     */
     public function getPropietario()
     {
         return $this->propietario;
@@ -190,7 +201,7 @@ class Casa{
      * Set the value of propietario
      *
      * @return  self
-     */ 
+     */
     public function setPropietario($propietario)
     {
         $this->propietario = $propietario;
@@ -198,7 +209,3 @@ class Casa{
         return $this;
     }
 }
-
-
-
-?>

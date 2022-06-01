@@ -7,13 +7,22 @@
 <body>
     <?php include_once("barraSuperior.php") ?>
     <!--**************************Contenido Principal**************************-->
-    <?php
-    $hayobjCasas = false;
-    for ($i = 0; $i < count($objCasasProvincia); $i++) {
-    ?>
+    <div class='container bmarron p-5 pt-1 mt-4'>
 
-        <div class='container bdorado mt-4'>
-            <div class='row'>
+        <?php $hayobjCasas = false ?>
+        <div class="row">
+            <h1>
+                <?php if (isset($objCasasProvincia[0])) {
+                    echo $objCasasProvincia[0]->getProvincia();
+                } ?>
+            </h1>
+        </div>
+        <?php
+        for ($i = 0; $i < count($objCasasProvincia); $i++) {
+        ?>
+
+
+            <div class='row mb-4 bdorado'>
                 <div class='col-3'>
                     <p>Carrousel</p>
                 </div>
@@ -46,12 +55,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-    <?php
-        $hayobjCasas = true;
-    }
-    if (!$hayobjCasas) {
-        echo "<h1>No se encuentran ofertas en esta provincia</h1>";
-    }
-    ?>
+
+        <?php
+            $hayobjCasas = true;
+        }
+        if (!$hayobjCasas) {
+            echo "<h1>No se encuentran ofertas en esta provincia</h1>";
+        }
+        ?>
+    </div>
 </body>

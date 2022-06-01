@@ -16,19 +16,13 @@
         </tr>
         <?php
         for ($i = 0; $i < count($objProvincias); $i++) {
-            $numCasasProvincia = 0;
-            for ($j = 0; $j < count($objCasas); $j++) {
-                if ($objCasas[$j]->getProvincia() == $objProvincias[$i]->getId()) {
-                    $numCasasProvincia++;
-                }
-            }
             echo
             "<tr onclick='myFunction(" . $objProvincias[$i]->getId() . ")'>
             <td>" . $objProvincias[$i]->getNombre() . "</td>
             <td>" . $objProvincias[$i]->getPoblacion() . "</td>
             <td>" . $objProvincias[$i]->getDensidad() . "</td>
             <td>" . $objProvincias[$i]->getSuperficie() . "</td>
-            <td>" . $numCasasProvincia . "</td>
+            <td>" . $objProvincias[$i]->getNumOfertas() . "</td>
     </tr>";
         }
         ?>
