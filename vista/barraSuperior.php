@@ -26,7 +26,7 @@
                     </a>
                 </div>
                 <div class="col-2 pt-3 negro">
-                    <a href='registro.php' style='text-decoration: none'>
+                    <a href='../Vista/registro.php' style='text-decoration: none'>
                         <p class="negro">Registrarse</p>
                     </a>
                 </div>

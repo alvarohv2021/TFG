@@ -15,7 +15,7 @@
     <!--**************************Contenido Principal**************************-->
     <div class='container bdorado mt-4 grande'>
         <div class='row'>
-            <h1>Carrousel</p>
+            <h1>Carrousel</h1>
         </div>
 
         <div class='row bazul'>
@@ -40,7 +40,7 @@
             </div>
             <div class="col-1">
 
-                <?php
+            <?php
                 $arrayIdUsuarios = getIdUsuariosFromListaFavritosCasa($objCasa->getId());
                 if (isset($arrayIdUsuarios)) {
                     if (in_array($usuario->id, $arrayIdUsuarios)) {
@@ -50,7 +50,26 @@
                     }
                 } else {
                     echo '<i onclick="myFunction(this)" class="fa-regular fa-heart"></i>';
-                } ?>
+                }
+                if (isset($usuario)) { ?>
+                    <script>
+                        function myFunction(x) {
+                            if (x.classList[0] == "fa-solid") {
+                                x.classList.replace("fa-solid", "fa-regular");
+                                this.open("../Controladores/c_casa.php?accion=remove&idCasa=" + <?php echo $objCasa->id ?>, "_self");
+                            } else {
+                                x.classList.replace("fa-regular", "fa-solid");
+                                this.open("../Controladores/c_casa.php?accion=add&idCasa=" + <?php echo $objCasa->id ?>, "_self");
+                            }
+                        }
+                    </script>
+                <?php } else { ?>
+                    <script>
+                        function myFunction(x) {
+                            this.open("../Vista/registro.php", "_self");
+                        }
+                    </script>
+                <?php } ?>
 
             </div>
         </div>

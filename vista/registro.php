@@ -42,7 +42,7 @@
             </div>
         </form>
         <div class="col-6 offset-6">
-            <a href="inicio.php">
+            <a href="../Vista/inicio.php">
             <button class="btn btn-success w-100 mb-2">Sign In</button>
             </a>
         </div>
