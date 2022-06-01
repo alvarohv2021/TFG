@@ -8,9 +8,6 @@
 </head>
 
 <body>
-    <style>
-
-    </style>
     <?php include_once("barraSuperior.php") ?>
     <!--**************************Contenido Principal**************************-->
     <div class='container bdorado mt-4 grande'>
@@ -35,25 +32,28 @@
             <div class='col-1'>
                 <p><?php echo $objCasa->getPrecio() ?>€</p>
             </div>
-            <div class='col-11'>
+            <div class='col-12'>
                 <p>Descripcion</p>
+            </div>
+            <div class="col-11">
+                <p class="cursor correo" onclick="copiarAlPortapapeles(this)"><?php echo $objCasa->getEmailPropietario() ?></p>
             </div>
             <div class="col-1">
 
-            <?php
+                <?php
                 $arrayIdUsuarios = getIdUsuariosFromListaFavritosCasa($objCasa->getId());
                 if (isset($arrayIdUsuarios)) {
                     if (in_array($usuario->id, $arrayIdUsuarios)) {
-                        echo '<i onclick="myFunction(this)" class="fa-solid fa-heart"></i>';
+                        echo '<i onclick="toggleFavorito(this)" class="fa-solid icono fa-heart"></i>';
                     } else {
-                        echo '<i onclick="myFunction(this)" class="fa-regular fa-heart"></i>';
+                        echo '<i onclick="toggleFavorito(this)" class="fa-regular icono fa-heart"></i>';
                     }
                 } else {
-                    echo '<i onclick="myFunction(this)" class="fa-regular fa-heart"></i>';
+                    echo '<i onclick="toggleFavorito(this)" class="fa-regular icono fa-heart"></i>';
                 }
                 if (isset($usuario)) { ?>
                     <script>
-                        function myFunction(x) {
+                        function toggleFavorito(x) {
                             if (x.classList[0] == "fa-solid") {
                                 x.classList.replace("fa-solid", "fa-regular");
                                 this.open("../Controladores/c_casa.php?accion=remove&idCasa=" + <?php echo $objCasa->id ?>, "_self");
@@ -65,7 +65,7 @@
                     </script>
                 <?php } else { ?>
                     <script>
-                        function myFunction(x) {
+                        function toggleFavorito(x) {
                             this.open("../Vista/registro.php", "_self");
                         }
                     </script>
@@ -74,9 +74,18 @@
             </div>
         </div>
     </div>
+    <script>
+        function copiarAlPortapapeles(elemento) {
+            var correo = elemento.innerHTML;
+            console.log(correo);
 
-    </div>
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(correo);
 
+            /* Alert the copied text */
+            alert("Correo: " + correo+" copiado en el protapapeles");
+        }
+    </script>
 </body>
 
 </html>

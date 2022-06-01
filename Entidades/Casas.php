@@ -208,4 +208,16 @@ class Casa
 
         return $this;
     }
+
+    public function getEmailPropietario()
+    {
+        global $coon;
+
+        $query = $coon->query("SELECT Email from casas
+        left join usuarios as usr on casas.Propietario=usr.id
+        where casas.id=" . $this->id);
+
+        $emailPropietario = $query->fetch_all(MYSQLI_ASSOC);
+        return $emailPropietario[0]['Email'];
+    }
 }

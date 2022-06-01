@@ -53,7 +53,7 @@ td {
     border-collapse: collapse;
     text-align: center;
     padding: 5px;
-    cursor: pointer;
+    icono: pointer;
 }
 
 tr:hover,
@@ -79,4 +79,46 @@ a:hover {
 a {
     color: #000000 !important;
     text-decoration: none !important;
+}
+
+.btn-registro {
+    padding: 12px 6px;
+    border-radius: .25rem;
+    background-color: #bfd7ea;
+    border-color: #bfd7ea;
+    margin-bottom: .5rem !important;
+    border: 1px solid transparent;
+}
+
+.btn-inicio {
+    padding: 12px 6px;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: #839788;
+    border-color: #839788;
+    margin-bottom: .5rem !important;
+    border: 1px solid transparent;
+}
+
+.icono {
+    cursor: pointer;
+    text-shadow: 1.5px 1.5px grey;
+}
+
+.icono:hover {
+    text-shadow: none;
+}
+
+.correo {
+    text-decoration: underline;
+
+}
+
+.correo:hover {
+    text-shadow: 0.5px 0.5px blue;
+}
+
+.container {
+    box-shadow: 10px 10px lightgray;
+    border-radius: 25px 25px 0px 0px;
 }
