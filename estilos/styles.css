@@ -6,13 +6,6 @@ body {
     color: #eee0cb;
 }
 
-/*
-$raisin-black: #231f20ff;
-$international-orange-golden-gate-bridge: #bb4430ff;
-$middle-blue: #7ebdc2ff;
-$medium-champagne: #f3dfa2ff;
-$linen: #efe6ddff;
-*/
 .azul {
     color: #bfd7ea;
 }
@@ -82,6 +75,7 @@ a:hover {
     color: #baa898 !important;
     text-decoration: none;
 }
+
 a {
     color: #000000 !important;
     text-decoration: none !important;
