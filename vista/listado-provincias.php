@@ -17,7 +17,7 @@
         <?php
         for ($i = 0; $i < count($objProvincias); $i++) {
             echo
-            "<tr onclick='myFunction(" . $objProvincias[$i]->getId() . ")'>
+            "<tr class='listaProvincias cursor' onclick='myFunction(" . $objProvincias[$i]->getId() . ")'>
             <td>" . $objProvincias[$i]->getNombre() . "</td>
             <td>" . $objProvincias[$i]->getPoblacion() . "</td>
             <td>" . $objProvincias[$i]->getDensidad() . "</td>

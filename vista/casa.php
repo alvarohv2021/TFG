@@ -36,6 +36,7 @@
                 <p>Descripcion</p>
             </div>
             <div class="col-11">
+                <p>Correo de contacto:</p>
                 <p class="cursor correo" onclick="copiarAlPortapapeles(this)"><?php echo $objCasa->getEmailPropietario() ?></p>
             </div>
             <div class="col-1">
@@ -44,12 +45,12 @@
                 $arrayIdUsuarios = getIdUsuariosFromListaFavritosCasa($objCasa->getId());
                 if (isset($arrayIdUsuarios)) {
                     if (in_array($usuario->id, $arrayIdUsuarios)) {
-                        echo '<i onclick="toggleFavorito(this)" class="fa-solid icono fa-heart"></i>';
+                        echo '<i onclick="toggleFavorito(this)" class="fa-solid icono fa-heart cursor"></i>';
                     } else {
-                        echo '<i onclick="toggleFavorito(this)" class="fa-regular icono fa-heart"></i>';
+                        echo '<i onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
                     }
                 } else {
-                    echo '<i onclick="toggleFavorito(this)" class="fa-regular icono fa-heart"></i>';
+                    echo '<i onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
                 }
                 if (isset($usuario)) { ?>
                     <script>

@@ -7,7 +7,7 @@
 <body>
     <?php include_once("barraSuperior.php") ?>
     <!--**************************Contenido Principal**************************-->
-    <div class='container bmarron p-5 pt-1 mt-4'>
+    <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
 
         <?php $hayobjCasas = false ?>
         <div class="row">
@@ -22,7 +22,7 @@
         ?>
 
 
-            <div class='row mb-4 bdorado'>
+            <div class='row mb-4 bdorado ofertaCasa'>
                 <div class='col-3'>
                     <p>Carrousel</p>
                 </div>

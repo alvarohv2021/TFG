@@ -2,32 +2,6 @@
 require_once("../BD/bd.php");
 include_once("../Entidades/Casas.php");
 
-function listaCasas()
-{
-    global $coon;
-
-    $query = $coon->query("SELECT * FROM casas");
-    $arrayCasas = $query->fetch_all(MYSQLI_ASSOC);
-
-    $arrayObjCasas = [];
-
-    for ($i = 0; $i < count($arrayCasas); $i++) {
-        $arrayObjCasas[$i] = new Casa(
-            $arrayCasas[$i]["id"],
-            $arrayCasas[$i]["Tipo"],
-            $arrayCasas[$i]["Descripcion"],
-            $arrayCasas[$i]["Habitaciones"],
-            $arrayCasas[$i]["Precio"],
-            $arrayCasas[$i]["Oferta"],
-            $arrayCasas[$i]["Metros"],
-            $arrayCasas[$i]["Provincia"],
-            $arrayCasas[$i]["Propietario"]
-        );
-    }
-
-    return $arrayObjCasas;
-}
-
 function listaCasasProvincia($idProvincia)
 {
     global $coon;
@@ -41,7 +15,7 @@ function listaCasasProvincia($idProvincia)
         $arrayObjCasas[$i] = new Casa(
             $arrayCasas[$i]["id"],
             $arrayCasas[$i]["Tipo"],
-            $arrayCasas[$i]["Descripcion"],
+            $arrayCasas[$i]["DescripcionBreve"],
             $arrayCasas[$i]["Habitaciones"],
             $arrayCasas[$i]["Precio"],
             $arrayCasas[$i]["Oferta"],
@@ -103,4 +77,20 @@ function addOrRemoveFromFavoritos($idUsuario, $idCasa, $accion)
     }
 
     $coon->query($query);
+}
+
+function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario)
+{
+    global $coon;
+
+    /*if ($descipcion == "") {
+        $query = ("INSERT into casas(Tipo, Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
+        values(" . $tipo . "," . $descipcionBreve . "," . $habitaciones . "," . $precio . "," . $oferta . "," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
+    } else {
+        $query = ("INSERT into casas(Tipo, Descripcion,DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
+        values(" . $tipo . "," . $descipcionBreve . "," . $descipcion . "," . $habitaciones . "," . $precio . "," . $oferta . "," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
+    }
+
+    $coon->query($query);*/
+    var_dump($tipo, $descipcionBreve, $descipcion, $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario);
 }

@@ -98,12 +98,17 @@ a {
     border-color: #839788;
     margin-bottom: .5rem !important;
     border: 1px solid transparent;
+    width: 100%;
+}
+
+.cursor {
+    cursor: pointer;
 }
 
 .icono {
-    cursor: pointer;
     text-shadow: 1.5px 1.5px grey;
 }
+
 
 .icono:hover {
     text-shadow: none;
@@ -115,10 +120,29 @@ a {
 }
 
 .correo:hover {
-    text-shadow: 0.5px 0.5px blue;
+    text-shadow: 0.5px 0.5px 0.5px blue;
 }
 
-.container {
+.casasProvincia {
     box-shadow: 10px 10px lightgray;
     border-radius: 25px 25px 0px 0px;
+}
+
+.ofertaCasa {
+    transition: box-shadow .3s;
+    border-radius: 25px 0px 0px 25px;
+
+}
+
+.ofertaCasa:hover {
+    box-shadow: 5px 5px 5px gray;
+}
+
+.listaProvincias {
+    transition: box-shadow .1s;
+
+}
+
+.listaProvincias:hover {
+    box-shadow: 5px 5px 5px gray;
 }

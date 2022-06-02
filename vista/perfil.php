@@ -9,9 +9,9 @@
 <body>
     <?php include_once("barraSuperior.php") ?>
     <!--**************************Contenido Principal**************************-->
-    <div class='container mt-4'>
-        <div class="row bmarron">
-            <div class="col-12">
+    <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
+        <div class="row ">
+            <div class="col-12 ">
                 <h1>Casas Favoritas</h1>
 
                 <?php
@@ -19,7 +19,7 @@
                 for ($i = 0; $i < count($casasFavoritas); $i++) {
                 ?>
 
-                    <div class='row bdorado m-4'>
+                    <div class='row bdorado ofertaCasa m-4'>
                         <div class='col-3'>
                             <p>Carrousel</p>
                         </div>

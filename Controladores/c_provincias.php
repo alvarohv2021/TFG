@@ -9,7 +9,6 @@ session_start();
 $usuario = $_SESSION['Usuario'];
 
 $objProvincias=listaProvincias();
-$objCasas=listaCasas();
 
 include_once("../Vista/listado-provincias.php");
 ?>
