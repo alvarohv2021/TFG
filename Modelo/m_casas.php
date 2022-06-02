@@ -10,12 +10,13 @@ function listaCasasProvincia($idProvincia)
     $arrayCasas = $query->fetch_all(MYSQLI_ASSOC);
 
     $arrayObjCasas = [];
-
+    
     for ($i = 0; $i < count($arrayCasas); $i++) {
         $arrayObjCasas[$i] = new Casa(
             $arrayCasas[$i]["id"],
             $arrayCasas[$i]["Tipo"],
             $arrayCasas[$i]["DescripcionBreve"],
+            $arrayCasas[$i]["Descripcion"],
             $arrayCasas[$i]["Habitaciones"],
             $arrayCasas[$i]["Precio"],
             $arrayCasas[$i]["Oferta"],
@@ -38,6 +39,7 @@ function getCasaById($idCasa)
     $objCasa = new Casa(
         $arrayCasa[0]["id"],
         $arrayCasa[0]["Tipo"],
+        $arrayCasa[0]["DescripcionBreve"],
         $arrayCasa[0]["Descripcion"],
         $arrayCasa[0]["Habitaciones"],
         $arrayCasa[0]["Precio"],
@@ -83,14 +85,14 @@ function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $prec
 {
     global $coon;
 
-    /*if ($descipcion == "") {
+    if ($descipcion == "") {
         $query = ("INSERT into casas(Tipo, Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
-        values(" . $tipo . "," . $descipcionBreve . "," . $habitaciones . "," . $precio . "," . $oferta . "," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
+        values('" . $tipo . "','" . $descipcionBreve . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
     } else {
         $query = ("INSERT into casas(Tipo, Descripcion,DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
-        values(" . $tipo . "," . $descipcionBreve . "," . $descipcion . "," . $habitaciones . "," . $precio . "," . $oferta . "," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
+        values('" . $tipo . "','" . $descipcionBreve . "','" . $descipcion . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
     }
 
-    $coon->query($query);*/
+    $coon->query($query);
     var_dump($tipo, $descipcionBreve, $descipcion, $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario);
 }

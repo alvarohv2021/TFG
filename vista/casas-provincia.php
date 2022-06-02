@@ -20,8 +20,6 @@
         <?php
         for ($i = 0; $i < count($objCasasProvincia); $i++) {
         ?>
-
-
             <div class='row mb-4 bdorado ofertaCasa'>
                 <div class='col-3'>
                     <p>Carrousel</p>
@@ -30,11 +28,11 @@
                     <div class='row'>
                         <div class='col-12'>
                             <a href='../Controladores/c_casa.php?idCasa=<?php echo $objCasasProvincia[$i]->getId() ?>' target="_self">
-                                <p><?php echo $objCasasProvincia[$i]->getDescripcion() ?></p>
+                                <p><?php echo $objCasasProvincia[$i]->getDescripcionBreve() ?></p>
                             </a>
                         </div>
                         <div class='col-12'>
-                            <p>Descripcion</p>
+                            <p><?php echo $objCasasProvincia[$i]->getDescripcion() ?></p>
                         </div>
                     </div>
                 </div>

@@ -107,7 +107,23 @@ a {
 
 .icono {
     text-shadow: 1.5px 1.5px grey;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
 }
+
+.texto,
+.esta {
+    visibility: hidden;
+
+}
+
+.texto:hover,
+.esta {
+
+    visibility: visible;
+}
+
 
 
 .icono:hover {

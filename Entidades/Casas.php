@@ -3,12 +3,13 @@ include_once("../BD/bd.php");
 
 class Casa
 {
-    public $id, $tipo, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario;
+    public $id, $tipo, $descripcionBreve, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario;
 
-    public function __construct($id, $tipo, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario)
+    public function __construct($id, $tipo, $descripcionBreve, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario)
     {
         $this->id = $id;
         $this->tipo = $tipo;
+        $this->descripcionBreve = $descripcionBreve;
         $this->descripcion = $descripcion;
         $this->habitaciones = $habitaciones;
         $this->precio = $precio;
@@ -219,5 +220,25 @@ class Casa
 
         $emailPropietario = $query->fetch_all(MYSQLI_ASSOC);
         return $emailPropietario[0]['Email'];
+    }
+
+    /**
+     * Get the value of descripcionBreve
+     */
+    public function getDescripcionBreve()
+    {
+        return $this->descripcionBreve;
+    }
+
+    /**
+     * Set the value of descripcionBreve
+     *
+     * @return  self
+     */
+    public function setDescripcionBreve($descripcionBreve)
+    {
+        $this->descripcionBreve = $descripcionBreve;
+
+        return $this;
     }
 }

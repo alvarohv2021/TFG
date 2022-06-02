@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php include_once("barraSuperior.php") ?>
+    <?php include_once("barraSuperior.php"); ?>
     <!--**************************Contenido Principal**************************-->
     <div class='container bdorado mt-4 grande'>
         <div class='row'>
@@ -17,7 +17,7 @@
 
         <div class='row bazul'>
             <div class='col-12'>
-                <p><?php echo $objCasa->getDescripcion() ?></p>
+                <p><?php echo $objCasa->getDescripcionBreve() ?></p>
             </div>
             <div class='col-12'>
                 <p><?php echo $objCasa->getTipo() ?>/<?php echo $objCasa->getOferta() ?></p>
@@ -33,12 +33,21 @@
                 <p><?php echo $objCasa->getPrecio() ?>€</p>
             </div>
             <div class='col-12'>
-                <p>Descripcion</p>
+                <p><?php if ($objCasa->getDescripcion() != "") {
+                        echo "hola mundo";
+                    } else {
+                        echo "Esta vivienda no tiene descripción";
+                    } ?></p>
             </div>
             <div class="col-11">
                 <p>Correo de contacto:</p>
                 <p class="cursor correo" onclick="copiarAlPortapapeles(this)"><?php echo $objCasa->getEmailPropietario() ?></p>
             </div>
+
+            <div class="texto">Hola
+                <span class="esta">Texto</span>
+            </div>
+
             <div class="col-1">
 
                 <?php
@@ -80,11 +89,9 @@
             var correo = elemento.innerHTML;
             console.log(correo);
 
-            /* Copy the text inside the text field */
             navigator.clipboard.writeText(correo);
 
-            /* Alert the copied text */
-            alert("Correo: " + correo+" copiado en el protapapeles");
+            alert("Correo: " + correo + " copiado en el protapapeles");
         }
     </script>
 </body>
