@@ -124,7 +124,7 @@
         </div>
     </div>
     <script>
-        function openCity(evt, cityName) {
+        function openCity(evt, pageSelected) {
             var i, contenido, eleccion;
             contenido = document.getElementsByClassName("contenido");
             for (i = 0; i < contenido.length; i++) {
@@ -134,7 +134,7 @@
             for (i = 0; i < eleccion.length; i++) {
                 eleccion[i].className = eleccion[i].className.replace(" active", "");
             }
-            document.getElementById(cityName).style.display = "block";
+            document.getElementById(pageSelected).style.display = "block";
             evt.currentTarget.className += " active";
         }
     </script>

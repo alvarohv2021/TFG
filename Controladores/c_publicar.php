@@ -9,7 +9,11 @@ session_start();
 $usuario = $_SESSION['Usuario'];
 
 /*Comprobando si es un insert en vez de un update*/
-if (isset($_GET["idCasa"])) {
+if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
+
+    deleteCasa($_GET["idCasa"]);
+    header("Location: ../Controladores/c_provincias.php");
+} elseif (isset($_GET["idCasa"])) {
 
     $_SESSION['idCasa'] = $_GET["idCasa"];
 

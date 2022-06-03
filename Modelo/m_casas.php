@@ -106,3 +106,11 @@ function updateCasa($idCasa, $tipo, $descipcionBreve, $descipcion = "", $habitac
 
     $coon->query($query);
 }
+
+function deleteCasa($idCasa){
+    global $coon;
+
+    $query= ("DELETE from casas where id=".$idCasa);
+
+    $coon->query($query);
+}

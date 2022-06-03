@@ -76,11 +76,17 @@ function getListaFavoritos($idUser)
     left join casas on fav.id_casa = casas.id
     where usr.id =" . $idUser);
 
-    $casasFavoritas = $query->fetch_all(MYSQLI_ASSOC);
-    for ($i = 0; $i < count($casasFavoritas); $i++) {
-        $arrayObjetosCasasFavoritas[$i] = getCasaById($casasFavoritas[$i]['id']);
+
+    if ($query->num_rows != 0) {
+
+        $casasFavoritas = $query->fetch_all(MYSQLI_ASSOC);
+        for ($i = 0; $i < count($casasFavoritas); $i++) {
+            if ($casasFavoritas[$i]['id'] != null) {
+                $arrayObjetosCasasFavoritas[$i] = getCasaById($casasFavoritas[$i]['id']);
+            }
+        }
+        return $arrayObjetosCasasFavoritas;
     }
-    return $arrayObjetosCasasFavoritas;
 }
 
 function getPublicacionesUsuario($idUser)

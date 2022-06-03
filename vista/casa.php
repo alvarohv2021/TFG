@@ -40,7 +40,7 @@
                         echo "Esta vivienda no tiene descripción";
                     } ?></p>
             </div>
-            <div class="col-10">
+            <div class="col-9">
                 <p>Correo de contacto:</p>
                 <p class="cursor correo" onclick="copiarAlPortapapeles(this)"><?php echo $objCasa->getEmailPropietario() ?></p>
             </div>
@@ -82,6 +82,11 @@
                 <div class="col-1">
                     <a href="../Controladores/c_publicar.php?idCasa=<?php echo $objCasa->id ?>">
                         <i class="fa-solid fa-pen-to-square icono cursor"></i>
+                    </a>
+                </div>
+                <div class="col-1">
+                    <a href="../Controladores/c_publicar.php?borrar=true&idCasa=<?php echo $objCasa->id ?>">
+                        <i class="fa-solid fa-trash icono cursor"></i>
                     </a>
                 </div>
             <?php } ?>
