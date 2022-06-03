@@ -77,8 +77,23 @@ function getListaFavoritos($idUser)
     where usr.id =" . $idUser);
 
     $casasFavoritas = $query->fetch_all(MYSQLI_ASSOC);
-    for ($i=0; $i < count($casasFavoritas); $i++) { 
-        $arrayObjetosCasasFavoritas[$i]=getCasaById($casasFavoritas[$i]['id']);
+    for ($i = 0; $i < count($casasFavoritas); $i++) {
+        $arrayObjetosCasasFavoritas[$i] = getCasaById($casasFavoritas[$i]['id']);
     }
     return $arrayObjetosCasasFavoritas;
+}
+
+function getPublicacionesUsuario($idUser)
+{
+    global $coon;
+    $query = $coon->query("SELECT * FROM casas
+    where Propietario = " . $idUser);
+
+    $publicaciones = $query->fetch_all(MYSQLI_ASSOC);
+
+    for ($i = 0; $i < count($publicaciones); $i++) {
+        $objCasasPublicaciones[$i] = getCasaById($publicaciones[$i]['id']);
+    }
+
+    return $objCasasPublicaciones;
 }

@@ -1,0 +1,13 @@
+.cursor {
+    cursor: pointer;
+}
+
+.icono {
+    text-shadow: 1.5px 1.5px grey;
+    position: relative;
+    display: inline-block;
+}
+
+.icono:hover {
+    text-shadow: none;
+}

@@ -9,6 +9,7 @@ session_start();
 $usuario = $_SESSION['Usuario'];
 
 $casasFavoritas=getListaFavoritos($usuario->id);
+$publicaciones=getPublicacionesUsuario($usuario->id);
 
 include_once("barraSuperior.php");
 

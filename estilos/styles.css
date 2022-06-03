@@ -1,14 +1,23 @@
+/*Esenciales*/
 html,
 body {
     font-family: sans-serif;
     text-align: center;
-
-    color: #eee0cb;
 }
 
-.azul {
-    color: #bfd7ea;
+a:hover {
+    color: #baa898 !important;
+    text-decoration: none;
 }
+
+a {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+
+/************************************************/
+
 
 .marron {
     color: #baa898;
@@ -16,14 +25,6 @@ body {
 
 .dorado {
     color: #eee0cb;
-}
-
-.negro {
-    color: #000000;
-}
-
-.verde {
-    color: #839788;
 }
 
 .bazul {
@@ -46,40 +47,14 @@ body {
     background-color: #839788;
 }
 
-table,
-th,
-tr,
-td {
-    border-collapse: collapse;
-    text-align: center;
-    padding: 5px;
-    icono: pointer;
-}
 
-tr:hover,
-td:hover {
-    background-color: #eee0cb;
-}
-
-th {
-    background-color: #000000;
-    color: #baa898;
-}
 
 .grande {
     text-align: left;
     font-size: x-large;
 }
 
-a:hover {
-    color: #baa898 !important;
-    text-decoration: none;
-}
 
-a {
-    color: #000000 !important;
-    text-decoration: none !important;
-}
 
 .btn-registro {
     padding: 12px 6px;
@@ -99,35 +74,6 @@ a {
     margin-bottom: .5rem !important;
     border: 1px solid transparent;
     width: 100%;
-}
-
-.cursor {
-    cursor: pointer;
-}
-
-.icono {
-    text-shadow: 1.5px 1.5px grey;
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
-
-.texto,
-.esta {
-    visibility: hidden;
-
-}
-
-.texto:hover,
-.esta {
-
-    visibility: visible;
-}
-
-
-
-.icono:hover {
-    text-shadow: none;
 }
 
 .correo {
@@ -151,14 +97,5 @@ a {
 }
 
 .ofertaCasa:hover {
-    box-shadow: 5px 5px 5px gray;
-}
-
-.listaProvincias {
-    transition: box-shadow .1s;
-
-}
-
-.listaProvincias:hover {
     box-shadow: 5px 5px 5px gray;
 }

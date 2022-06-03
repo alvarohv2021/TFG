@@ -1,0 +1,23 @@
+table {
+    text-align: center;
+}
+
+tr:hover,
+td:hover {
+    background-color: #eee0cb;
+
+}
+
+tr:hover {
+    box-shadow: 5px 5px 5px gray;
+}
+
+th {
+    background-color: #000000;
+    color: #baa898;
+    transition: box-shadow .1s;
+}
+
+.cursor {
+    cursor: pointer;
+}
