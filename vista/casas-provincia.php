@@ -9,7 +9,7 @@
     <!--**************************Contenido Principal**************************-->
     <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
 
-        <?php $hayobjCasas = false ?>
+
         <div class="row">
             <h1>
                 <?php if (isset($objCasasProvincia[0])) {
@@ -55,10 +55,7 @@
             </div>
 
         <?php
-            $hayobjCasas = true;
-        }
-        if (!$hayobjCasas) {
-            echo "<h1>No se encuentran ofertas en esta provincia</h1>";
+
         }
         ?>
     </div>
