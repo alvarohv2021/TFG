@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `casas`;
 CREATE TABLE `casas` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Tipo` text,
+  `DescripcionBreve` text,
   `Descripcion` text,
   `Habitaciones` int DEFAULT NULL,
   `Precio` int DEFAULT NULL,
@@ -38,7 +39,7 @@ CREATE TABLE `casas` (
   KEY `fk_propietario_idx` (`Propietario`),
   CONSTRAINT `fk_propietario` FOREIGN KEY (`Propietario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_provincia` FOREIGN KEY (`Provincia`) REFERENCES `provincias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +48,7 @@ CREATE TABLE `casas` (
 
 LOCK TABLES `casas` WRITE;
 /*!40000 ALTER TABLE `casas` DISABLE KEYS */;
-INSERT INTO `casas` VALUES (1,'Apartamento','Pequeño apartamento en el centro',1,300,'Alquiler',50,1,NULL),(2,'Piso','Piso a las afueras, con conexion de autobus al centro',3,300000,'Venta',200,9,1),(3,'Ático','Atico de ua 10ª planta con terraza',4,1100,'Alquiler',150,15,NULL),(4,'Bajo','Bajo sin jardin, muy bonito',2,900,'Alquiler',130,12,NULL),(5,'Piso','Tercer piso con ascensor',2,200000,'Venta',100,1,NULL),(7,'Bajo','wsdvsdf',6,30,'Alquiler',4,9,NULL);
+INSERT INTO `casas` VALUES (1,'Apartamento','Pequeño apartamento en el centro',NULL,1,300,'Alquiler',50,1,15),(3,'Ático','Atico de ua 10ª planta con terraza','Atico en el centro muy bien ubicado',4,1100,'Alquiler',150,4,4),(4,'Bajo','Bajo sin jardin, muy bonito',NULL,2,900,'Alquiler',130,12,16),(8,'Piso','Piso cerca de la cosata ya amueblado','',4,800,'Alquiler',125,7,4),(10,'Piso','Piso frente a la playa totalmente amuebladp','4 planta con ascensor',4,100000,'Venta',125,13,4),(11,'Bajo','Bajo sin jardin','',3,300,'Alquiler',100,8,4),(12,'Apartamento','Apartamento amueblado a buen precio en un barrio obrero','Apartamento asequible',2,400,'Alquiler',50,20,17);
 /*!40000 ALTER TABLE `casas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-01 17:59:12
+-- Dump completed on 2022-06-03 23:18:18
