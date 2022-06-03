@@ -10,7 +10,7 @@ function listaCasasProvincia($idProvincia)
     $arrayCasas = $query->fetch_all(MYSQLI_ASSOC);
 
     $arrayObjCasas = [];
-    
+
     for ($i = 0; $i < count($arrayCasas); $i++) {
         $arrayObjCasas[$i] = new Casa(
             $arrayCasas[$i]["id"],
@@ -86,7 +86,7 @@ function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $prec
     global $coon;
 
     if ($descipcion == "") {
-        $query = ("INSERT into casas(Tipo, Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
+        $query = ("INSERT into casas(Tipo, DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
         values('" . $tipo . "','" . $descipcionBreve . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
     } else {
         $query = ("INSERT into casas(Tipo, Descripcion,DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
@@ -94,5 +94,15 @@ function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $prec
     }
 
     $coon->query($query);
-    var_dump($tipo, $descipcionBreve, $descipcion, $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario);
+}
+
+function updateCasa($idCasa, $tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario)
+{
+    global $coon;
+
+    $query = ("UPDATE casas set Tipo='" . $tipo . "', DescripcionBreve='" . $descipcionBreve . "',Descripcion='" . $descipcion . "',
+     Habitaciones=" . $habitaciones . ", Precio=" . $precio . ", Oferta='" . $oferta . "', Metros='" . $metros . "', Provincia='" . $idProvincia . "', 
+     Propietario=" . $idPropietario . " where id = " . $idCasa);
+
+    $coon->query($query);
 }

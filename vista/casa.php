@@ -35,7 +35,7 @@
             </div>
             <div class='col-12'>
                 <p><?php if ($objCasa->getDescripcion() != "") {
-                        echo "hola mundo";
+                        echo $objCasa->getDescripcion();
                     } else {
                         echo "Esta vivienda no tiene descripción";
                     } ?></p>
@@ -80,7 +80,9 @@
             <?php
             if ($publicacion == true) { ?>
                 <div class="col-1">
-                    <i href="../Controladores/c_publicar.php?objCasa=<?php echo $objCasa->id ?>" class="fa-solid fa-pen-to-square icono cursor"></i>
+                    <a href="../Controladores/c_publicar.php?idCasa=<?php echo $objCasa->id ?>">
+                        <i class="fa-solid fa-pen-to-square icono cursor"></i>
+                    </a>
                 </div>
             <?php } ?>
         </div>
