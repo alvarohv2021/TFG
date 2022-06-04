@@ -1,7 +1,13 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+
+//Crea una carpeta, dentro de la ya creada imagenes, con el nombre especificado
+$ruta = "../imagenes/" . $_SESSION['Usuario']->username . "/" .$_SESSION['idCasa'] . "/";
+var_dump($ruta);
+mkdir($ruta);
+
 //Especifica el directorio donde se va ha guardar la imagen
-$target_dir = "../imagenes/";
+$target_dir = $ruta;
 
 //El lugar donde se encuentra la imagen que se va ha subir
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

@@ -21,7 +21,7 @@
     <!--**************************Contenido Principal**************************-->
     <h1>Publicar tu anuncio de particular gratis</h1>
     <div class="container bazul">
-        <form method="POST" action="../Controladores/c_publicar.php">
+        <form method="POST" action="../Controladores/c_publicar.php" enctype="multipart/form-data">
             <div class="form-group row">
                 <div class="col-12">
                     <label>
@@ -108,6 +108,12 @@
             <div class="row p-4">
                 <div class="col-6 offset-3">
                     <input class="btn-inicio" type="submit" value="Submit">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload Image" name="submit">
                 </div>
             </div>
         </form>

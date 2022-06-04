@@ -11,7 +11,7 @@
 
 <body>
     <div class="container bdorado rounded mt-5">
-        <form method="post" action="../Controladores/c_registro.php">
+        <form method="post" action="../Controladores/c_registro.php" enctype="multipart/form-data">
 
             <div class="form-group row">
                 <div class="col-3 text-center mt-4">
