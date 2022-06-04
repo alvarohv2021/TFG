@@ -1,23 +1,28 @@
-table {
+table td,table th{
     text-align: center;
-}
-
-tr:hover,
-td:hover {
-    background-color: #eee0cb;
-
+    border: none !important;
 }
 
 tr:hover {
+    background-color: #eee0cb;
     box-shadow: 5px 5px 5px gray;
+
 }
 
-th {
-    background-color: #000000;
-    color: #baa898;
-    transition: box-shadow .1s;
+tr:first-child:hover {
+    background-color: transparent;
+    box-shadow: none;
+    text-align: center;
+    border: none !important;
+    border-radius: 25px 25px 0px 0px;
 }
 
 .cursor {
     cursor: pointer;
+}
+
+table,
+tbody {
+    box-shadow: 5px 5px 5px gray;
+    border-radius: 25px 25px 0px 0px;
 }

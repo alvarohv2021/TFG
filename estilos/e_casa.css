@@ -11,3 +11,27 @@
 .icono:hover {
     text-shadow: none;
 }
+
+.correo {
+    text-decoration: underline;
+
+}
+
+.correo:hover {
+    text-shadow: 0.5px 0.5px 0.5px blue;
+}
+
+.casasProvincia {
+    box-shadow: 10px 10px lightgray;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.ofertaCasa {
+    transition: box-shadow .3s;
+    border-radius: 25px 0px 0px 25px;
+
+}
+
+.ofertaCasa:hover {
+    box-shadow: 5px 5px 5px gray;
+}

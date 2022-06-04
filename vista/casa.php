@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <script src="https://kit.fontawesome.com/d08437ea27.js" crossorigin="anonymous"></script>
-    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
-    <link href="../estilos/styles.css" type="text/css" rel="stylesheet">
-    <link href="../estilos/e_casa.css" type="text/css" rel="stylesheet">
-</head>
-
+<?php include_once("header.html") ?>
 <body>
     <?php include_once("barraSuperior.php"); ?>
     <!--**************************Contenido Principal**************************-->
@@ -25,10 +16,10 @@
             </div>
 
             <div class='col-1'>
-                <p><?php echo $objCasa->getHabitaciones() ?> hab.</p>
+                <p><?php echo $objCasa->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
             </div>
             <div class='col-1'>
-                <p><?php echo $objCasa->getMetrosCuadrados() ?> ㎡</p>
+                <p><?php echo $objCasa->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
             </div>
             <div class='col-1'>
                 <p><?php echo $objCasa->getPrecio() ?>€</p>

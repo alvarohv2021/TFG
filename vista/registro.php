@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Registro</title>
-    <link href="../estilos/styles.css" type="text/css" rel="stylesheet">
-    <link href="../estilos/botones.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-</head>
+<?php include_once("header.html") ?>
 
 <body>
     <div class="container bdorado rounded mt-5">
@@ -23,32 +14,31 @@
                 </div>
                 <label class="sr-only" for="name">User Name</label>
                 <div class="col-12">
-                    <input type="text" class="form-control mb-2 mr-2" name="name" placeholder="User name">
+                    <input type="text" class="form-control mb-2 mr-2" name="name" placeholder="User name" required>
                 </div>
                 <label class="sr-only" for="email">email</label>
                 <div class="col-12">
-                    <input type="email" class="form-control mb-2 mr-2" name="email" placeholder="Email Address">
+                    <input type="email" class="form-control mb-2 mr-2" name="email" placeholder="Email Address" required>
                 </div>
                 <label class="sr-only" for="password">password</label>
                 <div class="col-6">
-                    <input type="password" class="form-control mb-2 mr-2" name="password" placeholder="Password">
+                    <input type="password" class="form-control mb-2 mr-2" name="password" placeholder="Password" required>
                 </div>
                 <label class="sr-only" for="cPassword">confirm password</label>
                 <div class="col-6">
-                    <input type="password" class="form-control mb-2 mr-2" name="cPassword" placeholder="Confirm Password">
+                    <input type="password" class="form-control mb-2 mr-2" name="cPassword" placeholder="Confirm Password" required>
                 </div>
             </div>
 
-            <div class="col-6 float-left">
-                <button type="submit" class="btn-registro w-100 mb-2">Register</button>
-            </div>
+            <div class="row">
+                <div class="col-6 float-left">
+                    <button type="submit" class="btn-registro w-100 mb-2">Registrarse</button>
+                </div>
         </form>
-        <div class="col-6 offset-6">
-            <a href="../Vista/inicio.php">
-                <button class="btn-inicio w-100 mb-2">Sign In</button>
-            </a>
+        <div class="col-6">
+            <button onclick="document.location=inicio.php" class="btn-inicio w-100 mb-2">Iniciar Sesión</button>
         </div>
-
+    </div>
     </div>
 
     <?php

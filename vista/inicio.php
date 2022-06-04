@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio de sesion</title>
-    <link href="../estilos/styles.css" type="text/css" rel="stylesheet">
-    <link href="../estilos/botones.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-</head>
+<?php include_once("header.html") ?>
 
 <body>
     <div class="container bdorado rounded mt-5">
@@ -30,15 +21,17 @@
                 </div>
             </div>
 
-
-            <div class="col-6 float-left">
-                <button type="submit" class="btn-inicio w-100 mb-2">Sign In</button>
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit" class="btn-inicio w-100 mb-2">Iniciar Sesión</button>
+                </div>
             </div>
+
         </form>
-        <div class="col-6 offset-6">
-            <a href="../Vista/registro.php">
-                <button class="btn-registro w-100 mb-2">Register</button>
-            </a>
+        <div class="row">
+            <div class="col-6 offset-6">
+                <button onclick="document.location=registro.php" class="btn-registro w-100 mb-2">Registrarse</button>
+            </div>
         </div>
     </div>
 

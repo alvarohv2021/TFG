@@ -9,7 +9,6 @@ session_start();
 
 $usuario = $_SESSION['Usuario'];
 
-var_dump($_SESSION['idCasa']);
 //Compruebo si quiere borrar una casa
 if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 
