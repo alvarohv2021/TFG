@@ -22,7 +22,7 @@
         ?>
             <div class='row mb-4 bdorado ofertaCasa'>
                 <div class='col-3'>
-                    <p>Carrousel</p>
+                    <img src="<?php echo $objCasasProvincia[$i]->getRutaImagen() ?>" alt="">
                 </div>
                 <div class='col-6'>
                     <div class='row'>

@@ -88,10 +88,10 @@ function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $prec
     global $coon;
 
     if ($descipcion == "") {
-        $query = ("INSERT into casas(Tipo, DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
+        $query = ("INSERT into casas(Tipo, DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario,RutaImagen) 
         values('" . $tipo . "','" . $descipcionBreve . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ",'" . $rutaImagen . "')");
     } else {
-        $query = ("INSERT into casas(Tipo ,DescripcionBreve,Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
+        $query = ("INSERT into casas(Tipo ,DescripcionBreve,Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario,RutaImagen) 
         values('" . $tipo . "','" . $descipcionBreve . "','" . $descipcion . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ",'" . $rutaImagen . "')");
     }
 

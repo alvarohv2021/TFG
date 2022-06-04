@@ -48,7 +48,7 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 
     $_SESSION['idCasa'] = null;
 
-    header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"]);
+    //header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"]);
 
     /*Comprobando si es un insert en vez de un update*/
 } elseif (isset($_POST["tipo"])) {
