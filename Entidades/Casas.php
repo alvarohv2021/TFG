@@ -3,9 +3,9 @@ include_once("../BD/bd.php");
 
 class Casa
 {
-    public $id, $tipo, $descripcionBreve, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario;
+    public $id, $tipo, $descripcionBreve, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario, $rutaImagen;
 
-    public function __construct($id, $tipo, $descripcionBreve, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario)
+    public function __construct($id, $tipo, $descripcionBreve, $descripcion, $habitaciones, $precio, $oferta, $metrosCuadrados, $provincia, $propietario, $rutaImagen)
     {
         $this->id = $id;
         $this->tipo = $tipo;
@@ -17,6 +17,7 @@ class Casa
         $this->metrosCuadrados = $metrosCuadrados;
         $this->provincia = $provincia;
         $this->propietario = $propietario;
+        $this->rutaImagen = $rutaImagen;
     }
 
 
@@ -241,4 +242,24 @@ class Casa
 
         return $this;
     }
+
+        /**
+         * Get the value of rutaImagen
+         */ 
+        public function getRutaImagen()
+        {
+                return $this->rutaImagen;
+        }
+
+        /**
+         * Set the value of rutaImagen
+         *
+         * @return  self
+         */ 
+        public function setRutaImagen($rutaImagen)
+        {
+                $this->rutaImagen = $rutaImagen;
+
+                return $this;
+        }
 }

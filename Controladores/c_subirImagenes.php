@@ -2,8 +2,7 @@
 error_reporting(E_ERROR | E_PARSE);
 
 //Crea una carpeta, dentro de la ya creada imagenes, con el nombre especificado
-$ruta = "../imagenes/" . $_SESSION['Usuario']->username . "/" .$_SESSION['idCasa'] . "/";
-var_dump($ruta);
+$ruta = "../imagenes/" . $_SESSION['Usuario']->username . "/" . $_SESSION['idCasa'] . "/";
 mkdir($ruta);
 
 //Especifica el directorio donde se va ha guardar la imagen

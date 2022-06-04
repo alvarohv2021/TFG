@@ -22,7 +22,8 @@ function listaCasasProvincia($idProvincia)
             $arrayCasas[$i]["Oferta"],
             $arrayCasas[$i]["Metros"],
             $arrayCasas[$i]["Provincia"],
-            $arrayCasas[$i]["Propietario"]
+            $arrayCasas[$i]["Propietario"],
+            $arrayCasas[$i]["RutaImagen"]
         );
     }
 
@@ -46,7 +47,8 @@ function getCasaById($idCasa)
         $arrayCasa[0]["Oferta"],
         $arrayCasa[0]["Metros"],
         $arrayCasa[0]["Provincia"],
-        $arrayCasa[0]["Propietario"]
+        $arrayCasa[0]["Propietario"],
+        $arrayCasa[0]["RutaImagen"]
     );
 
     return $objCasa;
@@ -81,28 +83,28 @@ function addOrRemoveFromFavoritos($idUsuario, $idCasa, $accion)
     $coon->query($query);
 }
 
-function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario)
+function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario, $rutaImagen)
 {
     global $coon;
 
     if ($descipcion == "") {
         $query = ("INSERT into casas(Tipo, DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
-        values('" . $tipo . "','" . $descipcionBreve . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
+        values('" . $tipo . "','" . $descipcionBreve . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ",'" . $rutaImagen . "')");
     } else {
         $query = ("INSERT into casas(Tipo ,DescripcionBreve,Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
-        values('" . $tipo . "','" . $descipcionBreve . "','" . $descipcion . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
+        values('" . $tipo . "','" . $descipcionBreve . "','" . $descipcion . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ",'" . $rutaImagen . "')");
     }
 
     $coon->query($query);
 }
 
-function updateCasa($idCasa, $tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario)
+function updateCasa($idCasa, $tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario, $rutaImagen)
 {
     global $coon;
 
     $query = ("UPDATE casas set Tipo='" . $tipo . "', DescripcionBreve='" . $descipcionBreve . "',Descripcion='" . $descipcion . "',
      Habitaciones=" . $habitaciones . ", Precio=" . $precio . ", Oferta='" . $oferta . "', Metros='" . $metros . "', Provincia='" . $idProvincia . "', 
-     Propietario=" . $idPropietario . " where id = " . $idCasa);
+     Propietario=" . $idPropietario . ",RutaImagen='" . $rutaImagen . "' where id = " . $idCasa);
 
     $coon->query($query);
 }

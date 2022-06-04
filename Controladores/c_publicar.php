@@ -17,7 +17,6 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
     deleteCasa($_GET["idCasa"]);
 
     header("Location: ../Controladores/c_provincias.php");
-    
 } elseif (isset($_GET["idCasa"])) {
 
     $_SESSION['idCasa'] = $_GET["idCasa"];
@@ -27,6 +26,10 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
     /*Comprobacion si es un update*/
 } elseif (isset($_SESSION['idCasa'])) {
 
+    $objCasa = getCasaById($_SESSION['idCasa']);
+    //Borramos la imagen anterior para poner la nueva
+    unlink($objCasa->rutaImagen);
+    
     include_once("c_subirImagenes.php");
 
     updateCasa(
@@ -39,12 +42,13 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
         $_POST["oferta"],
         $_POST["metros"],
         $_POST["idProvincia"],
-        $usuario->id
+        $usuario->id,
+        $target_file
     );
 
     $_SESSION['idCasa'] = null;
 
-    //header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"]);
+    header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"]);
 
     /*Comprobando si es un insert en vez de un update*/
 } elseif (isset($_POST["tipo"])) {
@@ -60,9 +64,10 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
         $_POST["oferta"],
         $_POST["metros"],
         $_POST["idProvincia"],
-        $usuario->id
+        $usuario->id,
+        $target_file
     );
-  //  header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"] . "&hola");
+    header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"] . "&hola");
 }
 include_once("../Modelo/m_provincias.php");
 $objProvincias = listaProvincias();
