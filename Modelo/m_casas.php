@@ -83,19 +83,24 @@ function addOrRemoveFromFavoritos($idUsuario, $idCasa, $accion)
     $coon->query($query);
 }
 
-function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario, $rutaImagen)
+function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario)
 {
     global $coon;
 
     if ($descipcion == "") {
-        $query = ("INSERT into casas(Tipo, DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario,RutaImagen) 
-        values('" . $tipo . "','" . $descipcionBreve . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ",'" . $rutaImagen . "')");
+        $query = ("INSERT into casas(Tipo, DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
+        values('" . $tipo . "','" . $descipcionBreve . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ",')");
     } else {
-        $query = ("INSERT into casas(Tipo ,DescripcionBreve,Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario,RutaImagen) 
-        values('" . $tipo . "','" . $descipcionBreve . "','" . $descipcion . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ",'" . $rutaImagen . "')");
+        $query = ("INSERT into casas(Tipo ,DescripcionBreve,Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
+        values('" . $tipo . "','" . $descipcionBreve . "','" . $descipcion . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ",')");
     }
 
     $coon->query($query);
+
+    $query = $coon->query("SELECT * FROM casas ORDER BY ID DESC LIMIT 1");
+    $arrayCasa = $query->fetch_all(MYSQLI_ASSOC);
+    $casa = $arrayCasa[0];
+    return $casa['id'];
 }
 
 function updateCasa($idCasa, $tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario, $rutaImagen)

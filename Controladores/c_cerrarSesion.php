@@ -3,7 +3,7 @@ session_start();
 //***************cierre de sesion***************
 if (isset($_GET['sesion'])) {
     if ($_GET['sesion'] == 'false') {
-        $_SESSION['Usuario'] = null;
+        unset($_SESSION['Usuario']);
     }
 }
-include_once ('../Controladores/c_provincias.php');
+include_once('../Controladores/c_provincias.php');

@@ -28,8 +28,8 @@
                         ?>
 
                             <div class='row bdorado ofertaCasa m-4'>
-                                <div class='col-3'>
-                                    <p>Carrousel</p>
+                                <div class='col-3' style="padding-left: 0px;">
+                                    <img src="<?php echo $publicaciones[$i]->getRutaImagen() ?>" alt="">
                                 </div>
                                 <div class='col-6'>
                                     <div class='row'>
@@ -84,8 +84,8 @@
                         ?>
 
                             <div class='row bdorado ofertaCasa m-4'>
-                                <div class='col-3'>
-                                    <p>Carrousel</p>
+                                <div class='col-3' style="padding-left: 0px;">
+                                    <img class="img-fluid" src="<?php echo $casasFavoritas[$i]->getRutaImagen() ?>" alt="">
                                 </div>
                                 <div class='col-6'>
                                     <div class='row'>

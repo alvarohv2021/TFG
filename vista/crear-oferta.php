@@ -86,7 +86,7 @@
             </div>
             <div class="row">
                 <div class="col-3 offset-2">
-                    <input class="form-control" type="number" id="habitaciones" name="habitaciones" min="1" max="10" placeholder="Entre 1 and 10" required value="<?php echo $objCasa->habitaciones ?>">
+                    <input class="form-control" type="number" id="habitaciones" name="habitaciones" min="1" max="10" placeholder="Entre 1 y 10" required value="<?php echo $objCasa->habitaciones ?>">
                 </div>
                 <div class="col-3">
                     <input class="form-control" type="number" id="precio" name="precio" placeholder="Precio" required value="<?php echo $objCasa->precio ?>">

@@ -3,7 +3,7 @@ error_reporting(E_ERROR | E_PARSE);
 
 //Crea una carpeta, dentro de la ya creada imagenes, con el nombre especificado
 $ruta = "../imagenes/" . $_SESSION['Usuario']->username . "/" . $_SESSION['idCasa'] . "/";
-mkdir($ruta);
+mkdir($ruta,0777,true);
 
 //Especifica el directorio donde se va ha guardar la imagen
 $target_dir = $ruta;
@@ -52,7 +52,6 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
     // if everything is ok, try to upload file
 } else {
-    var_dump($_FILES["fileToUpload"]["tmp_name"], $target_file);
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
     } else {

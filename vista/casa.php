@@ -41,8 +41,10 @@
                     } ?></p>
             </div>
             <div class="col-9">
-                <p>Correo de contacto:</p>
-                <p class="cursor correo" onclick="copiarAlPortapapeles(this)"><?php echo $objCasa->getEmailPropietario() ?></p>
+                <div>Correo de contacto:
+                    <span class="cursor correo" onclick="copiarAlPortapapeles(this)"><?php echo $objCasa->getEmailPropietario() ?></span>
+                </div>
+
             </div>
 
             <div class="col-1">

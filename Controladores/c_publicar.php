@@ -9,27 +9,27 @@ session_start();
 
 $usuario = $_SESSION['Usuario'];
 
-
-
+var_dump($_SESSION['idCasa']);
 //Compruebo si quiere borrar una casa
 if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 
     deleteCasa($_GET["idCasa"]);
 
     header("Location: ../Controladores/c_provincias.php");
-} elseif (isset($_GET["idCasa"])) {
+} else if (isset($_GET["idCasa"])) {
+
 
     $_SESSION['idCasa'] = $_GET["idCasa"];
 
     $objCasa = getCasaById($_GET["idCasa"]);
 
     /*Comprobacion si es un update*/
-} elseif (isset($_SESSION['idCasa'])) {
+} else if (isset($_SESSION['idCasa'])) {
 
     $objCasa = getCasaById($_SESSION['idCasa']);
     //Borramos la imagen anterior para poner la nueva
     unlink($objCasa->rutaImagen);
-    
+
     include_once("c_subirImagenes.php");
 
     updateCasa(
@@ -46,16 +46,31 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
         $target_file
     );
 
-    $_SESSION['idCasa'] = null;
+    unset($_SESSION['idCasa']);
 
-    //header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"]);
+    header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"]);
 
     /*Comprobando si es un insert en vez de un update*/
-} elseif (isset($_POST["tipo"])) {
+} else if (isset($_POST["tipo"])) {
 
-    include_once("c_subirImagenes.php");
 
-    addCasa(
+
+    $idCasa = addCasa(
+        $_POST["tipo"],
+        $_POST["descripcionBreve"],
+        $_POST["descripcion"],
+        $_POST["habitaciones"],
+        $_POST["precio"],
+        $_POST["oferta"],
+        $_POST["metros"],
+        $_POST["idProvincia"],
+        $usuario->id
+    );
+
+    include_once("c_subirImagenes.php?idCasa=" . $idCasa);
+
+    updateCasa(
+        $idCasa,
         $_POST["tipo"],
         $_POST["descripcionBreve"],
         $_POST["descripcion"],
@@ -67,6 +82,7 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
         $usuario->id,
         $target_file
     );
+
     header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"] . "&hola");
 }
 include_once("../Modelo/m_provincias.php");

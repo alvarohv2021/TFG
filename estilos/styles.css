@@ -16,6 +16,10 @@ a {
 }
 
 img {
+    max-width: 300px;
+    max-height: 200px;
+    min-width: 300px;
+    min-height: 200px;
     border-radius: 25px 0px 0px 25px;
 }
 
