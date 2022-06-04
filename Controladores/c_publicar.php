@@ -39,8 +39,6 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
     header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"]);
 } else if (isset($_POST["tipo"])) {
 
-    var_dump("descripcion");
-
     addCasa(
         $_POST["tipo"],
         $_POST["descripcionBreve"],

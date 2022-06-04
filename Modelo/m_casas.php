@@ -89,7 +89,7 @@ function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $prec
         $query = ("INSERT into casas(Tipo, DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
         values('" . $tipo . "','" . $descipcionBreve . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
     } else {
-        $query = ("INSERT into casas(Tipo, Descripcion,DescripcionBreve, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
+        $query = ("INSERT into casas(Tipo ,DescripcionBreve,Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
         values('" . $tipo . "','" . $descipcionBreve . "','" . $descipcion . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
     }
 
@@ -107,10 +107,11 @@ function updateCasa($idCasa, $tipo, $descipcionBreve, $descipcion = "", $habitac
     $coon->query($query);
 }
 
-function deleteCasa($idCasa){
+function deleteCasa($idCasa)
+{
     global $coon;
 
-    $query= ("DELETE from casas where id=".$idCasa);
+    $query = ("DELETE from casas where id=" . $idCasa);
 
     $coon->query($query);
 }
