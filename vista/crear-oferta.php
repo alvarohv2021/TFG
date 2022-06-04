@@ -113,7 +113,6 @@
             <div class="row">
                 <div class="col-12">
                     <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submit">
                 </div>
             </div>
         </form>

@@ -21,8 +21,8 @@
         for ($i = 0; $i < count($objCasasProvincia); $i++) {
         ?>
             <div class='row mb-4 bdorado ofertaCasa'>
-                <div class='col-3'>
-                    <img src="<?php echo $objCasasProvincia[$i]->getRutaImagen() ?>" alt="">
+                <div class='col-3 ' style="padding-left: 0px;">
+                    <img class="img-fluid" src="<?php echo $objCasasProvincia[$i]->getRutaImagen() ?>" alt="">
                 </div>
                 <div class='col-6'>
                     <div class='row'>
