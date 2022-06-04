@@ -1,44 +1,39 @@
 <?php include_once("header.html") ?>
 
 <body>
-    <div class="container bdorado rounded mt-5">
-        <form method="post" action="../Controladores/c_registro.php" enctype="multipart/form-data">
+    <div class="inicio">
+        <h1>
+            <a href="../Controladores/c_provincias.php" style="text-decoration: none">Spain Homes</a>
+        </h1>
 
-            <div class="form-group row">
-                <div class="col-3 text-center mt-4">
-                    <h5><a href="../Controladores/c_provincias.php" style="text-decoration: none">Spain
-                            Travels</a></h5>
-                </div>
-                <div class="col-12 negro text-center">
-                    <h2>Inicio de sesion</h2>
-                </div>
-                <label class="sr-only" for="name">User Name</label>
-                <div class="col-12">
-                    <input type="text" class="form-control mb-2 mr-2" name="name" placeholder="User name" required>
-                </div>
-                <label class="sr-only" for="email">email</label>
-                <div class="col-12">
-                    <input type="email" class="form-control mb-2 mr-2" name="email" placeholder="Email Address" required>
-                </div>
-                <label class="sr-only" for="password">password</label>
-                <div class="col-6">
-                    <input type="password" class="form-control mb-2 mr-2" name="password" placeholder="Password" required>
-                </div>
-                <label class="sr-only" for="cPassword">confirm password</label>
-                <div class="col-6">
-                    <input type="password" class="form-control mb-2 mr-2" name="cPassword" placeholder="Confirm Password" required>
-                </div>
-            </div>
+        <div class="formulario">
+            <form method="post" action="../Controladores/c_inicio.php">
 
-            <div class="row">
-                <div class="col-6 float-left">
-                    <button type="submit" class="btn-registro w-100 mb-2">Registrarse</button>
-                </div>
-        </form>
-        <div class="col-6">
-            <button onclick="document.location=inicio.php" class="btn-inicio w-100 mb-2">Iniciar Sesión</button>
+
+                <h4>Inicio de sesion</h4>
+
+                <label for="email">Correo</label><br>
+
+                <input type="email" class="valores" name="email" placeholder="Email Address" required>
+
+                <label for="name">Name de Usuario</label><br>
+
+                <input type="text" class="valores" name="name" id="uName" placeholder="User Name" required><br>
+
+                <label for="password">Contraseña</label><br>
+
+                <input type="password" class="valores" name="password" id="password" placeholder="Password" required><br>
+
+                <label for="cPassword">Confirmar contraseña</label>
+
+                <input type="password" class="valores" name="cPassword" placeholder="Confirm Password" required>
+
+
+                <button type="submit" class="valores btn-registro">Registrarse</button><br>
+
+            </form>
         </div>
-    </div>
+        <p>Si ya tienes una cuenta haz <a href="../Vista/inicio.php">click aquí</a></p>
     </div>
 
     <?php
