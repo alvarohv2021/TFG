@@ -33,6 +33,9 @@
                     <div class='col-1'>
                         <p><?php echo $objCasa->getPrecio() ?>€</p>
                     </div>
+                    <div class='col-4'>
+                        <p><?php echo $objCasa->getProvincia() ?> <i class="fa-solid fa-map-location-dot"></i></p>
+                    </div>
 
                     <div class="row">
                         <div class="col-9">

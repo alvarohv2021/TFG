@@ -22,7 +22,7 @@
                                 <div class='col-6'>
                                     <div class='row mt-2'>
                                         <div class='col-12'>
-                                            <a href='../Controladores/c_casa.php?idCasa=<?php echo $casasFavoritas[$i]->getId() ?>' target="_self">
+                                            <a href='../Controladores/c_casa.php?idCasa=<?php echo $casasFavoritas[$i]->getId() ?>&publicacion=<?php $propietario = $casasFavoritas[$i]->getPropietario(); if ($propietario == $usuario->id){ echo true;} ?>' target="_self">
                                                 <h3><?php echo $casasFavoritas[$i]->getDescripcionBreve() ?></h3>
                                             </a>
                                         </div>

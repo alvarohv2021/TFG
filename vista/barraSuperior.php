@@ -1,14 +1,14 @@
     <!--**************************Barra Superior**************************-->
     <div class="container-fluid bdorado negro">
         <div class="row ">
-            <div class="col-8">
+            <div class="col-7">
                 <a href="../Controladores/c_provincias.php">
                     <h1>Spain Travels</h1>
                 </a>
             </div>
             <?php
             if (isset($usuario)) { ?>
-                <div class='col-1 pt-3 centrado'>
+                <div class='col-2 pt-3 derecha'>
                     <a href='../Controladores/c_publicar.php'>
                         <p>Publicar Oferta</p>
                     </a>
@@ -24,7 +24,7 @@
                     </a>
                 </div>
             <?php } else { ?>
-                <div class='col-1 pt-3 offset-1 centrado'>
+                <div class='col-1 pt-3 offset-2 centrado'>
                     <a href='../Controladores/c_inicio.php'>
                         <p>Iniciar Sesion</p>
                     </a>
