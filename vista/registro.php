@@ -2,7 +2,7 @@
 
 <body>
     <div class="inicio">
-        <h1>
+        <h1 class="centrado">
             <a href="../Controladores/c_provincias.php" style="text-decoration: none">Spain Homes</a>
         </h1>
 
@@ -33,7 +33,7 @@
 
             </form>
         </div>
-        <p>Si ya tienes una cuenta haz <a href="../Vista/inicio.php">click aquí</a></p>
+        <p class="centrado">Si ya tienes una cuenta <a href="../Vista/inicio.php">haz click aquí</a></p>
     </div>
 
     <?php

@@ -8,7 +8,6 @@ include_once("../Modelo/m_casas.php");
 session_start();
 
 $usuario = $_SESSION['Usuario'];
-
 //Compruebo si quiere borrar una casa
 if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 
@@ -27,7 +26,7 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 
     $objCasa = getCasaById($_SESSION['idCasa']);
 
-    if (basename($_FILES["fileToUpload"]["name"] != "")) {
+    if (basename($_FILES["archivo"]["name"] != "")) {
         //Borramos la imagen anterior para poner la nueva
         unlink($objCasa->rutaImagen);
         include_once("c_subirImagenes.php");
@@ -60,12 +59,6 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
             $objCasa->rutaImagen
         );
     }
-
-
-
-
-
-
 
     unset($_SESSION['idCasa']);
 

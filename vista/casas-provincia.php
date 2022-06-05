@@ -21,7 +21,7 @@
                 <div class='col-6'>
                     <div class='row'>
                         <div class='col-12 pt-2'>
-                            <a href='../Controladores/c_casa.php?idCasa=<?php echo $objCasasProvincia[$i]->getId() ?>' target="_self">
+                            <a href='../Controladores/c_casa.php?idCasa=<?php echo $objCasasProvincia[$i]->getId() ?>&publicacion=<?php $propietario = $objCasasProvincia[$i]->getPropietario(); if ($propietario == $usuario->id){ echo true;} ?>' target="_self">
                                 <h3><?php echo $objCasasProvincia[$i]->getDescripcionBreve() ?></h3>
                             </a>
                         </div>
@@ -57,3 +57,4 @@
         ?>
     </div>
 </body>
+<?php

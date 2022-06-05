@@ -10,7 +10,7 @@ $usuario = $_SESSION['Usuario'];
 include_once("../Modelo/m_casas.php");
 
 $objCasa = getCasaById($_GET["idCasa"]);
-if (isset($_GET["publicacion"]) | $_GET["publicacion"] != "") {
+if (isset($_GET["publicacion"]) && $_GET["publicacion"] != "") {
     $publicacion = true;
 } else {
     $publicacion = false;

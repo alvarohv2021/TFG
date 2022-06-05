@@ -2,7 +2,7 @@
 
 <body>
     <div class="inicio">
-        <h1>
+        <h1 class="centrado">
             <a href="../Controladores/c_provincias.php" style="text-decoration: none">Spain Homes</a>
         </h1>
 
@@ -24,7 +24,7 @@
 
             </form>
         </div>
-        <p>Si no tienes una cuenta haz <a href="../Vista/registro.php">click aquí</a></p>
+        <p class="centrado">Si no tienes una cuenta <a href="../Vista/registro.php">haz click aquí</a></p>
     </div>
 
 

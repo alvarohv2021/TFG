@@ -10,8 +10,7 @@
             if (isset($usuario)) { ?>
                 <div class='col-1 pt-3 centrado'>
                     <a href='../Controladores/c_publicar.php'>
-                        <p>
-                            Publicar Oferta</p>
+                        <p>Publicar Oferta</p>
                     </a>
                 </div>
                 <div class='col-1 pt-3 centrado'>
@@ -21,8 +20,7 @@
                 </div>
                 <div class='col-1 pt-3 centrado'>
                     <a href='../Controladores/c_cerrarSesion.php?sesion=false'>
-                        <p>
-                            Cerar Sesion</p>
+                        <p>Cerar Sesion</p>
                     </a>
                 </div>
             <?php } else { ?>

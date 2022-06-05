@@ -97,7 +97,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p>Sube un archivo: <input type="file" class="btn-file" name="fileToUpload" id="fileToUpload"></p>
+                    <p>Sube un archivo: <input type="file" class="btn-file" name="archivo" id="archivo"></p>
                 </div>
             </div>
         </form>
