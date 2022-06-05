@@ -5,7 +5,7 @@
     <!--**************************Contenido Principal**************************-->
     <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
         <div class="row">
-            <h1>
+            <h1 class="centrado">
                 <?php if (isset($objCasasProvincia[0])) {
                     echo $objCasasProvincia[0]->getProvincia();
                 } ?>
@@ -26,7 +26,7 @@
                             </a>
                         </div>
                         <div class='col-12'>
-                            <h4><?php echo $objCasasProvincia[$i]->getDescripcion() ?></h4>
+                            <h5><?php echo $objCasasProvincia[$i]->getDescripcion() ?></h5>
                         </div>
                     </div>
                 </div>
@@ -38,10 +38,10 @@
                         <div class='col-12'>
                             <p><?php echo $objCasasProvincia[$i]->getPrecio() ?>€</p>
                         </div>
-                        <div class='col-6'>
+                        <div class='col-3'>
                             <p><?php echo $objCasasProvincia[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
                         </div>
-                        <div class='col-6'>
+                        <div class='col-3'>
                             <p><?php echo $objCasasProvincia[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
                         </div>
                     </div>

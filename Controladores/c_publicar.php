@@ -26,24 +26,46 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 } else if (isset($_SESSION['idCasa'])) {
 
     $objCasa = getCasaById($_SESSION['idCasa']);
-    //Borramos la imagen anterior para poner la nueva
-    unlink($objCasa->rutaImagen);
 
-    include_once("c_subirImagenes.php");
+    if (basename($_FILES["fileToUpload"]["name"] != "")) {
+        //Borramos la imagen anterior para poner la nueva
+        unlink($objCasa->rutaImagen);
+        include_once("c_subirImagenes.php");
 
-    updateCasa(
-        $_SESSION['idCasa'],
-        $_POST["tipo"],
-        $_POST["descripcionBreve"],
-        $_POST["descripcion"],
-        $_POST["habitaciones"],
-        $_POST["precio"],
-        $_POST["oferta"],
-        $_POST["metros"],
-        $_POST["idProvincia"],
-        $usuario->id,
-        $target_file
-    );
+        updateCasa(
+            $_SESSION['idCasa'],
+            $_POST["tipo"],
+            $_POST["descripcionBreve"],
+            $_POST["descripcion"],
+            $_POST["habitaciones"],
+            $_POST["precio"],
+            $_POST["oferta"],
+            $_POST["metros"],
+            $_POST["idProvincia"],
+            $usuario->id,
+            $target_file
+        );
+    } else {
+        updateCasa(
+            $_SESSION['idCasa'],
+            $_POST["tipo"],
+            $_POST["descripcionBreve"],
+            $_POST["descripcion"],
+            $_POST["habitaciones"],
+            $_POST["precio"],
+            $_POST["oferta"],
+            $_POST["metros"],
+            $_POST["idProvincia"],
+            $usuario->id,
+            $objCasa->rutaImagen
+        );
+    }
+
+
+
+
+
+
 
     unset($_SESSION['idCasa']);
 

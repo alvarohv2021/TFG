@@ -2,7 +2,7 @@
 html,
 body {
     font-family: sans-serif;
-    text-align: center;
+
 }
 
 a:hover {
@@ -17,19 +17,14 @@ a {
 
 img {
     max-width: 300px;
-    max-height: 200px;
+    max-height: 175px;
     min-width: 300px;
-    min-height: 200px;
+    min-height: 175px;
     border-radius: 25px 0px 0px 25px;
 }
 
-/************************************************/
-
-
-
-textarea {
-    width: 100%;
-    padding: .375rem .75rem;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
+.centrado {
+    text-align: center;
 }
+
+/************************************************/

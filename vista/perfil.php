@@ -1,4 +1,5 @@
 <?php include_once("header.html") ?>
+
 <body>
     <?php include_once("barraSuperior.php") ?>
     <!--**************************Contenido Principal**************************-->
@@ -7,6 +8,68 @@
         <button class="eleccion" onclick="openCity(event, 'Publicaciones')">Publicaciones</button>
     </div>
 
+    <?php if ($casasFavoritas != null) { ?>
+        <div id="Favoritos" class="contenido mt-5">
+            <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
+                <div class="row ">
+                    <div class="col-12 ">
+                        <h1>Casas Favoritas</h1>
+                        <?php for ($i = 0; $i < count($casasFavoritas); $i++) { ?>
+                            <div class='row bdorado ofertaCasa m-4'>
+                                <div class='col-3' style="padding-left: 0px;">
+                                    <img class="img-fluid" src="<?php echo $casasFavoritas[$i]->getRutaImagen() ?>" alt="">
+                                </div>
+                                <div class='col-6'>
+                                    <div class='row'>
+                                        <div class='col-12'>
+                                            <a href='../Controladores/c_casa.php?idCasa=<?php echo $casasFavoritas[$i]->getId() ?>' target="_self">
+                                                <p><?php echo $casasFavoritas[$i]->getDescripcionBreve() ?></p>
+                                            </a>
+                                        </div>
+                                        <div class='col-12'>
+                                            <p><?php echo $casasFavoritas[$i]->getDescripcion() ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-3 bazul'>
+                                    <div class='row'>
+                                        <div class='col-12'>
+                                            <p><?php echo $casasFavoritas[$i]->getTipo() ?>/<?php echo $casasFavoritas[$i]->getOferta() ?></p>
+                                        </div>
+                                        <div class='col-12'>
+                                            <p><?php echo $casasFavoritas[$i]->getPrecio() ?>€</p>
+                                        </div>
+                                        <div class='col-3'>
+                                            <p><?php echo $casasFavoritas[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
+                                        </div>
+                                        <div class='col-3'>
+                                            <p><?php echo $casasFavoritas[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
+                                        </div>
+                                        <div class='col-12'>
+                                            <p><?php echo $casasFavoritas[$i]->getProvincia() ?> <i class="fa-solid fa-map-location-dot"></i></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } else { ?>
+        <div id="Favoritos" class="contenido mt-5">
+            <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
+                <div class="row ">
+                    <div class="col-12 ">
+                        <h1>Aun no has agragado ninguna vivienda a favoritos</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
+    
     <?php if ($publicaciones != null) { ?>
         <div id="Publicaciones" class="contenido mt-5">
             <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
@@ -38,10 +101,10 @@
                                         <div class='col-12'>
                                             <p><?php echo $publicaciones[$i]->getPrecio() ?>€</p>
                                         </div>
-                                        <div class='col-4 offset-2'>
+                                        <div class='col-3'>
                                             <p><?php echo $publicaciones[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
                                         </div>
-                                        <div class='col-4'>
+                                        <div class='col-3'>
                                             <p><?php echo $publicaciones[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
                                         </div>
                                         <div class='col-12'>
@@ -61,72 +124,6 @@
         </div>
     <?php } ?>
 
-
-    <?php if ($casasFavoritas != null) { ?>
-        <div id="Favoritos" class="contenido mt-5">
-            <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
-                <div class="row ">
-                    <div class="col-12 ">
-                        <h1>Casas Favoritas</h1>
-
-                        <?php
-
-                        for ($i = 0; $i < count($casasFavoritas); $i++) {
-                        ?>
-
-                            <div class='row bdorado ofertaCasa m-4'>
-                                <div class='col-3' style="padding-left: 0px;">
-                                    <img class="img-fluid" src="<?php echo $casasFavoritas[$i]->getRutaImagen() ?>" alt="">
-                                </div>
-                                <div class='col-6'>
-                                    <div class='row'>
-                                        <div class='col-12'>
-                                            <a href='../Controladores/c_casa.php?idCasa=<?php echo $casasFavoritas[$i]->getId() ?>' target="_self">
-                                                <p><?php echo $casasFavoritas[$i]->getDescripcionBreve() ?></p>
-                                            </a>
-                                        </div>
-                                        <div class='col-12'>
-                                            <p><?php echo $casasFavoritas[$i]->getDescripcion() ?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='col-3 bazul'>
-                                    <div class='row'>
-                                        <div class='col-12'>
-                                            <p><?php echo $casasFavoritas[$i]->getTipo() ?>/<?php echo $casasFavoritas[$i]->getOferta() ?></p>
-                                        </div>
-                                        <div class='col-12'>
-                                            <p><?php echo $casasFavoritas[$i]->getPrecio() ?>€</p>
-                                        </div>
-                                        <div class='col-4 offset-2'>
-                                            <p><?php echo $casasFavoritas[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
-                                        </div>
-                                        <div class='col-4'>
-                                            <p><?php echo $casasFavoritas[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
-                                        </div>
-                                        <div class='col-12'>
-                                            <p><?php echo $casasFavoritas[$i]->getProvincia() ?> <i class="fa-solid fa-map-location-dot"></i></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php } else { ?>
-        <div id="Favoritos" class="contenido mt-5">
-            <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
-                <div class="row ">
-                    <div class="col-12 ">
-                        <h1>Aun no has agragado ninguna vivienda a favoritos</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php } ?>
     <script>
         function openCity(evt, pageSelected) {
             var i, contenido, eleccion;
