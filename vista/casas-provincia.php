@@ -15,7 +15,7 @@
         for ($i = 0; $i < count($objCasasProvincia); $i++) {
         ?>
             <div class='row mb-4 bdorado ofertaCasa'>
-                <div class='col-md-3 col-12 p-0' >
+                <div class='col-md-3 col-12 p-0'>
                     <img src="<?php echo $objCasasProvincia[$i]->getRutaImagen() ?>" alt="">
                 </div>
                 <div class='col-md-6 col-12'>
@@ -57,4 +57,3 @@
         ?>
     </div>
 </body>
-<?php
