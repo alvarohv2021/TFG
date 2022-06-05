@@ -4,3 +4,17 @@ textarea {
     border: 1px solid #ced4da;
     border-radius: .25rem;
 }
+
+.btn-submit {
+    padding: 6px 50px 6px 50px;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: #839788;
+    border: 1px solid transparent;
+}
+
+.btn-file {
+    padding: 6px 6px;
+    border-radius: .25rem;
+    border: 1px solid transparent;
+}

@@ -3,9 +3,10 @@
 <body>
     <?php include_once("barraSuperior.php") ?>
     <!--**************************Contenido Principal**************************-->
-    <h1>Publicar tu anuncio de particular gratis</h1>
-    <div class="container bazul">
-        <form method="POST" action="../Controladores/c_publicar.php" enctype="multipart/form-data">
+
+    <div class="container casasProvincia centrado bmarron p-5 pt-1 mt-4">
+        <h1>Publicar tu anuncio de particular gratis</h1>
+        <form method="POST" class="bazul p-3" action="../Controladores/c_publicar.php" enctype="multipart/form-data">
             <div class="form-group row">
                 <div class="col-12">
                     <label>
@@ -86,17 +87,17 @@
             </div>
             <div class="row mt-1">
                 <div class="col-6 offset-3">
-                    <textarea name="descripcion" placeholder="Desripcion más extensa (opcional)"><?php echo $objCasa->descripcion ?></textarea>
+                    <textarea name="descripcion" placeholder="Desripcion más extensa (opcional)" maxlength="250"><?php echo $objCasa->descripcion ?></textarea>
                 </div>
             </div>
             <div class="row p-4">
                 <div class="col-6 offset-3">
-                    <input class="btn-inicio" type="submit" value="Submit">
+                    <input class="btn-submit" type="submit" value="Submit">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <p>Sube un archivo: <input type="file" class="btn-file" name="fileToUpload" id="fileToUpload"></p>
                 </div>
             </div>
         </form>

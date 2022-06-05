@@ -16,11 +16,11 @@
         ?>
             <div class='row mb-4 bdorado ofertaCasa'>
                 <div class='col-3 ' style="padding-left: 0px;">
-                    <img class="img-fluid" src="<?php echo $objCasasProvincia[$i]->getRutaImagen() ?>" alt="">
+                    <img src="<?php echo $objCasasProvincia[$i]->getRutaImagen() ?>" alt="">
                 </div>
                 <div class='col-6'>
                     <div class='row'>
-                        <div class='col-12'>
+                        <div class='col-12 pt-2'>
                             <a href='../Controladores/c_casa.php?idCasa=<?php echo $objCasasProvincia[$i]->getId() ?>' target="_self">
                                 <h3><?php echo $objCasasProvincia[$i]->getDescripcionBreve() ?></h3>
                             </a>
@@ -33,7 +33,7 @@
                 <div class='col-3 bazul'>
                     <div class='row'>
                         <div class='col-12'>
-                            <p><?php echo $objCasasProvincia[$i]->getTipo() ?>/<?php echo $objCasasProvincia[$i]->getOferta() ?></p>
+                            <h4><?php echo $objCasasProvincia[$i]->getTipo() ?>/<?php echo $objCasasProvincia[$i]->getOferta() ?></h4>
                         </div>
                         <div class='col-12'>
                             <p><?php echo $objCasasProvincia[$i]->getPrecio() ?>€</p>
@@ -43,6 +43,9 @@
                         </div>
                         <div class='col-3'>
                             <p><?php echo $objCasasProvincia[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
+                        </div>
+                        <div class="col-12">
+                            <p><?php echo $objCasasProvincia[0]->getProvincia() ?> <i class="fa-solid fa-map-location-dot"></i></p>
                         </div>
                     </div>
                 </div>

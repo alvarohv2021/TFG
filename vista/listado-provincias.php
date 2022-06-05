@@ -1,10 +1,11 @@
 <?php include_once("header.html") ?>
+
 <body>
     <?php include_once("barraSuperior.php") ?>
     <!--**************************Contenido Principal**************************-->
     <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
         <div class="row">
-            <h1>Listado de Provincias</h1>
+            <h1 class="centrado">Listado de Provincias</h1>
         </div>
         <table class="table bazul negro">
             <tr>
