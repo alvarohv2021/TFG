@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-9">
                             <div>Correo de contacto:
-                                <span class="cursor correo" onclick="copiarAlPortapapeles(this)"><?php echo $objCasa->getEmailPropietario() ?></span>
+                                <span class="cursor correo"><a href="mailto:<?php echo $objCasa->getEmailPropietario() ?>"><?php echo $objCasa->getEmailPropietario() ?></a></span>
                             </div>
 
                         </div>

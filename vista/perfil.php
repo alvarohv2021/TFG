@@ -10,18 +10,18 @@
 
     <?php if ($casasFavoritas != null) { ?>
         <div id="Favoritos" class="contenido mt-5">
-            <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
+            <div class='container casasProvincia bmarron pt-1 mt-4'>
                 <div class="row ">
                     <div class="col-12 ">
                         <h1 class="centrado">Casas Favoritas</h1>
                         <?php for ($i = 0; $i < count($casasFavoritas); $i++) { ?>
                             <div class='row bdorado ofertaCasa m-4'>
-                                <div class='col-3' style="padding-left: 0px;">
+                                <div class='col-md-3 col-12 p-0'>
                                     <img src="<?php echo $casasFavoritas[$i]->getRutaImagen() ?>" alt="">
                                 </div>
-                                <div class='col-6'>
-                                    <div class='row mt-2'>
-                                        <div class='col-12'>
+                                <div class='col-md-6 col-12'>
+                                    <div class='row'>
+                                        <div class='col-12 pt-2'>
                                             <a href='../Controladores/c_casa.php?idCasa=<?php echo $casasFavoritas[$i]->getId() ?>&publicacion=<?php $propietario = $casasFavoritas[$i]->getPropietario(); if ($propietario == $usuario->id){ echo true;} ?>' target="_self">
                                                 <h3><?php echo $casasFavoritas[$i]->getDescripcionBreve() ?></h3>
                                             </a>
@@ -31,7 +31,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class='col-3 bazul'>
+                                <div class='col-md-3 col-12 bazul mb-5'>
                                     <div class='row'>
                                         <div class='col-12'>
                                             <h4><?php echo $casasFavoritas[$i]->getTipo() ?>/<?php echo $casasFavoritas[$i]->getOferta() ?></h4>
@@ -59,7 +59,7 @@
         </div>
     <?php } else { ?>
         <div id="Favoritos" class="contenido mt-5">
-            <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
+            <div class='container casasProvincia bmarron pt-1 mt-4'>
                 <div class="row ">
                     <div class="col-12 ">
                         <h1>Aun no has agragado ninguna vivienda a favoritos</h1>
@@ -72,18 +72,18 @@
 
     <?php if ($publicaciones != null) { ?>
         <div id="Publicaciones" class="contenido mt-5">
-            <div class='container casasProvincia bmarron p-5 pt-1 mt-4'>
+            <div class='container casasProvincia bmarron pt-1 mt-4'>
                 <div class="row ">
                     <div class="col-12">
                         <h1 class="centrado">Tus publicaciones</h1>
                         <?php for ($i = 0; $i < count($publicaciones); $i++) { ?>
                             <div class='row bdorado ofertaCasa m-4'>
-                                <div class='col-3' style="padding-left: 0px;">
+                                <div class='col-md-3 col-12 p-0'>
                                     <img src="<?php echo $publicaciones[$i]->getRutaImagen() ?>" alt="">
                                 </div>
-                                <div class='col-6 mt-2'>
+                                <div class='col-md-6 col-12'>
                                     <div class='row'>
-                                        <div class='col-12'>
+                                        <div class='col-12 pt-2'>
                                             <a href='../Controladores/c_casa.php?publicacion=true&idCasa=<?php echo $publicaciones[$i]->getId() ?>' target="_self">
                                                 <h3><?php echo $publicaciones[$i]->getDescripcionBreve() ?></h3>
                                             </a>
@@ -93,7 +93,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class='col-3 bazul'>
+                                <div class='col-md-3 col-12 bazul mb-5'>
                                     <div class='row'>
                                         <div class='col-12'>
                                             <h4><?php echo $publicaciones[$i]->getTipo() ?>/<?php echo $publicaciones[$i]->getOferta() ?></h4>

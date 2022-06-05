@@ -7,7 +7,7 @@
         <div class="row">
             <h1 class="centrado">Listado de Provincias</h1>
         </div>
-        <table class="table bazul negro">
+        <table class="table table-responsive bazul negro">
             <tr>
                 <th>Provincias</th>
                 <th>Poblacion</th>
