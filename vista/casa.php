@@ -25,13 +25,13 @@
                     </div>
 
                     <div class='col-2'>
-                        <p><?php echo $objCasa->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
+                        <p title="Habitaciones"><?php echo $objCasa->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
                     </div>
                     <div class='col-3'>
-                        <p><?php echo $objCasa->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
+                        <p title="Metros cuadrados"><?php echo $objCasa->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
                     </div>
                     <div class='col-3'>
-                        <p><?php echo $objCasa->getPrecio() ?>€</p>
+                        <p><?php echo $objCasa->getPrecio() ?> <i class="fa-solid fa-euro-sign"></i></p>
                     </div>
                     <div class='col-4'>
                         <p><?php echo $objCasa->getProvincia() ?> <i class="fa-solid fa-map-location-dot"></i></p>
@@ -51,12 +51,12 @@
                             $arrayIdUsuarios = getIdUsuariosFromListaFavritosCasa($objCasa->getId());
                             if (isset($arrayIdUsuarios)) {
                                 if (in_array($usuario->id, $arrayIdUsuarios)) {
-                                    echo '<i onclick="toggleFavorito(this)" class="fa-solid icono fa-heart cursor"></i>';
+                                    echo '<i title="Añadir a favoritos" onclick="toggleFavorito(this)" class="fa-solid icono fa-heart cursor"></i>';
                                 } else {
-                                    echo '<i onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
+                                    echo '<i title="Eliminar de favoritos" onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
                                 }
                             } else {
-                                echo '<i onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
+                                echo '<i title="Eliminar de favoritos" onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
                             }
                             if (isset($usuario)) { ?>
                                 <script>
