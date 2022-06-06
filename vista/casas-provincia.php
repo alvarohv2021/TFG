@@ -54,10 +54,10 @@
                         <div class='col-12'>
                             <p><?php echo $objCasasProvincia[$i]->getPrecio() ?>€</p>
                         </div>
-                        <div class='col-3'>
+                        <div class='col-4'>
                             <p><?php echo $objCasasProvincia[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
                         </div>
-                        <div class='col-3'>
+                        <div class='col-4'>
                             <p><?php echo $objCasasProvincia[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
                         </div>
                         <div class="col-12">
