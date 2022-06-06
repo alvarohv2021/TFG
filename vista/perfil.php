@@ -14,7 +14,7 @@
     <link href="../estilos/e_colores.css" type="text/css" rel="stylesheet">
     <link href="../estilos/e_casas.css" type="text/css" rel="stylesheet">
     <link href="../estilos/e_perfil.css" type="text/css" rel="stylesheet">
-
+ 
 </head>
 <body>
     <?php include_once("barraSuperior.php") ?>
@@ -32,10 +32,10 @@
                         <h1 class="centrado">Casas Favoritas</h1>
                         <?php for ($i = 0; $i < count($casasFavoritas); $i++) { ?>
                             <div class='row bdorado ofertaCasa m-4'>
-                                <div class='col-md-3 col-12 p-0'>
-                                    <img src="<?php echo $casasFavoritas[$i]->getRutaImagen() ?>" alt="">
+                                <div class='col-lg-3 col-md-6 col-12 p-0'>
+                                    <img class="img-fluid" src="<?php echo $casasFavoritas[$i]->getRutaImagen() ?>" alt="">
                                 </div>
-                                <div class='col-md-6 col-12'>
+                                <div class='col-lg-6 col-md-6 col-sm-12 col-12'>
                                     <div class='row'>
                                         <div class='col-12 pt-2'>
                                             <a href='../Controladores/c_casa.php?idCasa=<?php echo $casasFavoritas[$i]->getId() ?>&publicacion=<?php $propietario = $casasFavoritas[$i]->getPropietario(); if ($propietario == $usuario->id){ echo true;} ?>' target="_self">
@@ -43,14 +43,14 @@
                                             </a>
                                         </div>
                                         <div class='col-12'>
-                                            <h5><?php echo $casasFavoritas[$i]->getDescripcion() ?></h5>
+                                            <p><?php echo $casasFavoritas[$i]->getDescripcion() ?></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class='col-md-3 col-12 bazul mb-5'>
+                                <div class='col-lg-3 col-12 bazul pt-3'>
                                     <div class='row'>
                                         <div class='col-12'>
-                                            <h4><?php echo $casasFavoritas[$i]->getTipo() ?>/<?php echo $casasFavoritas[$i]->getOferta() ?></h4>
+                                            <h5><?php echo $casasFavoritas[$i]->getTipo() ?>/<?php echo $casasFavoritas[$i]->getOferta() ?></h5>
                                         </div>
                                         <div class='col-12'>
                                             <p><?php echo $casasFavoritas[$i]->getPrecio() ?>€</p>
@@ -94,10 +94,10 @@
                         <h1 class="centrado">Tus publicaciones</h1>
                         <?php for ($i = 0; $i < count($publicaciones); $i++) { ?>
                             <div class='row bdorado ofertaCasa m-4'>
-                                <div class='col-md-3 col-12 p-0'>
-                                    <img src="<?php echo $publicaciones[$i]->getRutaImagen() ?>" alt="">
+                                <div class='col-lg-3 col-md-6 col-12 p-0'>
+                                    <img class="img-fluid" src="<?php echo $publicaciones[$i]->getRutaImagen() ?>" alt="">
                                 </div>
-                                <div class='col-md-6 col-12'>
+                                <div class='col-lg-6 col-md-6 col-sm-12 col-12'>
                                     <div class='row'>
                                         <div class='col-12 pt-2'>
                                             <a href='../Controladores/c_casa.php?publicacion=true&idCasa=<?php echo $publicaciones[$i]->getId() ?>' target="_self">
@@ -105,14 +105,14 @@
                                             </a>
                                         </div>
                                         <div class='col-12'>
-                                            <h5><?php echo $publicaciones[$i]->getDescripcion() ?></h5>
+                                            <p><?php echo $publicaciones[$i]->getDescripcion() ?></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class='col-md-3 col-12 bazul mb-5'>
+                                <div class='col-lg-3 col-12 bazul pt-3'>
                                     <div class='row'>
                                         <div class='col-12'>
-                                            <h4><?php echo $publicaciones[$i]->getTipo() ?>/<?php echo $publicaciones[$i]->getOferta() ?></h4>
+                                            <h5><?php echo $publicaciones[$i]->getTipo() ?>/<?php echo $publicaciones[$i]->getOferta() ?></h5>
                                         </div>
                                         <div class='col-12'>
                                             <p><?php echo $publicaciones[$i]->getPrecio() ?>€</p>

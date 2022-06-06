@@ -5,10 +5,10 @@
     <!--**************************Contenido Principal**************************-->
     <div class='container mt-4'>
         <div class='row'>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 p-0">
                 <img class="img-fluid" src="<?php echo $objCasa->getRutaImagen() ?>" alt="">
             </div>
-            <div class="col-8 bazul pt-2">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12 bazul">
                 <div class="row">
                     <div class='col-12'>
                         <h3><?php echo $objCasa->getDescripcionBreve() ?></h3>
@@ -20,17 +20,17 @@
                                 echo "Esta vivienda no tiene descripción";
                             } ?></h5>
                     </div>
-                    <div class='col-12 mt-4'>
+                    <div class='col-12'>
                         <h4><?php echo $objCasa->getTipo() ?>/<?php echo $objCasa->getOferta() ?></h4>
                     </div>
 
-                    <div class='col-1'>
+                    <div class='col-2'>
                         <p><?php echo $objCasa->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
                     </div>
-                    <div class='col-1'>
+                    <div class='col-3'>
                         <p><?php echo $objCasa->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
                     </div>
-                    <div class='col-1'>
+                    <div class='col-3'>
                         <p><?php echo $objCasa->getPrecio() ?>€</p>
                     </div>
                     <div class='col-4'>

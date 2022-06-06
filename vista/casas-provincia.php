@@ -31,10 +31,10 @@
         for ($i = 0; $i < count($objCasasProvincia); $i++) {
         ?>
             <div class='row mb-4 bdorado ofertaCasa'>
-                <div class='col-lg-3 col-12 p-0'>
-                    <img src="<?php echo $objCasasProvincia[$i]->getRutaImagen() ?>" alt="">
+                <div class='col-lg-3 col-md-6 col-12 p-0'>
+                    <img class="img-fluid" src="<?php echo $objCasasProvincia[$i]->getRutaImagen() ?>" alt="">
                 </div>
-                <div class='col-lg-6 col-sm-12 col-12'>
+                <div class='col-lg-6 col-md-6 col-sm-12 col-12'>
                     <div class='row'>
                         <div class='col-12 pt-2'>
                             <a href='../Controladores/c_casa.php?idCasa=<?php echo $objCasasProvincia[$i]->getId() ?>&publicacion=<?php $propietario = $objCasasProvincia[$i]->getPropietario(); if ($propietario == $usuario->id){ echo true;} ?>' target="_self">
@@ -42,14 +42,14 @@
                             </a>
                         </div>
                         <div class='col-12'>
-                            <h5><?php echo $objCasasProvincia[$i]->getDescripcion() ?></h5>
+                            <p><?php echo $objCasasProvincia[$i]->getDescripcion() ?></p>
                         </div>
                     </div>
                 </div>
-                <div class='col-lg-3 col-12 bazul'>
+                <div class='col-lg-3 col-12 bazul pt-3'>
                     <div class='row'>
                         <div class='col-12'>
-                            <h4><?php echo $objCasasProvincia[$i]->getTipo() ?>/<?php echo $objCasasProvincia[$i]->getOferta() ?></h4>
+                            <h5><?php echo $objCasasProvincia[$i]->getTipo() ?>/<?php echo $objCasasProvincia[$i]->getOferta() ?></h5>
                         </div>
                         <div class='col-12'>
                             <p><?php echo $objCasasProvincia[$i]->getPrecio() ?>€</p>
