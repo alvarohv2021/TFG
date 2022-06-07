@@ -78,7 +78,8 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
         $_POST["oferta"],
         $_POST["metros"],
         $_POST["idProvincia"],
-        $usuario->id
+        $usuario->id,
+        $target_file
     );
 
     include_once("c_subirImagenes.php?idCasa=" . $idCasa);
