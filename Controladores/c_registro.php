@@ -20,7 +20,7 @@ if (isset($_POST['password'])) {
                 $correoUsado = true;
             } else {
 
-                $usuario = comprobarUsuario($_POST['name'], $_POST['email']);
+                $usuario = comprobarUsuario($_POST['name'], $_POST['password']);
                 if (isset($usuario) && $usuario->id != 0) {
 
                     $_SESSION['Usuario'] = $usuario;

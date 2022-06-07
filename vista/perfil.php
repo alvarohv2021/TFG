@@ -25,8 +25,8 @@
     </div>
 
     <?php if ($casasFavoritas != null) { ?>
-        <div id="Favoritos" class="contenido mt-5">
-            <div class='container casasProvincia bmarron pt-1 mt-4'>
+        <div id="Favoritos" class="contenido mt-4">
+            <div class='container casasProvincia bmarron pt-1'>
                 <div class="row ">
                     <div class="col-12 ">
                         <h1 class="centrado">Casas Favoritas</h1>
@@ -74,7 +74,7 @@
             </div>
         </div>
     <?php } else { ?>
-        <div id="Favoritos" class="contenido mt-5">
+        <div id="Favoritos" class="contenido mt-4">
             <div class='container casasProvincia bmarron pt-1 mt-4'>
                 <div class="row ">
                     <div class="col-12 ">
@@ -87,8 +87,8 @@
 
 
     <?php if ($publicaciones != null) { ?>
-        <div id="Publicaciones" class="contenido mt-5">
-            <div class='container casasProvincia bmarron pt-1 mt-4'>
+        <div id="Publicaciones" class="contenido mt-4">
+            <div class='container casasProvincia bmarron pt-1'>
                 <div class="row ">
                     <div class="col-12">
                         <h1 class="centrado">Tus publicaciones</h1>

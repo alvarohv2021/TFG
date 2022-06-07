@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-4 offset-4 mt-4">
                 <div class="formulario">
-                    <form method="post" action="../Controladores/c_inicio.php">
+                    <form method="post" action="../Controladores/c_registro.php">
 
                         <h4>Inicio de sesion</h4>
 
