@@ -32,11 +32,6 @@
     height: 200px;
 }
 
-.col-3>img {
-    max-height: 200px;
-}
-
-
 .ofertaCasa:hover {
     box-shadow: 5px 5px 5px gray;
 }

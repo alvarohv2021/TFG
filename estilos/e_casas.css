@@ -1,0 +1,12 @@
+img {
+    border-radius: 25px 0px 0px 0px;
+}
+
+.ofertaCasa {
+    transition: box-shadow .3s;
+    border-radius: 25px 0px 0px 0px;
+}
+
+.ofertaCasa:hover {
+    box-shadow: 5px 5px 5px gray;
+}
