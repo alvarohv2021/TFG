@@ -51,22 +51,22 @@
                             $arrayIdUsuarios = getIdUsuariosFromListaFavritosCasa($objCasa->getId());
                             if (isset($arrayIdUsuarios)) {
                                 if (in_array($usuario->id, $arrayIdUsuarios)) {
-                                    echo '<i title="Añadir a favoritos" onclick="toggleFavorito(this)" class="fa-solid icono fa-heart cursor"></i>';
+                                    echo '<i title="Eliminar de favoritos" onclick="toggleFavorito(this)" class="fa-solid icono fa-heart cursor"></i>';
                                 } else {
-                                    echo '<i title="Eliminar de favoritos" onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
+                                    echo '<i title="Añadir a favoritos" onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
                                 }
                             } else {
-                                echo '<i title="Eliminar de favoritos" onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
+                                echo '<i title="Añadir a favoritos" onclick="toggleFavorito(this)" class="fa-regular icono fa-heart cursor"></i>';
                             }
                             if (isset($usuario)) { ?>
                                 <script>
                                     function toggleFavorito(x) {
                                         if (x.classList[0] == "fa-solid") {
                                             x.classList.replace("fa-solid", "fa-regular");
-                                            this.open("../Controladores/c_casa.php?accion=remove&idCasa=" + <?php echo $objCasa->id ?>, "_self");
+                                            this.open("../Controladores/c_casa.php?accion=remove&idCasa=<?php echo $objCasa->id ?>&publicacion=<?php $propietario = $objCasa->getPropietario(); if ($propietario == $usuario->id){ echo true;} ?>","_self");
                                         } else {
                                             x.classList.replace("fa-regular", "fa-solid");
-                                            this.open("../Controladores/c_casa.php?accion=add&idCasa=" + <?php echo $objCasa->id ?>, "_self");
+                                            this.open("../Controladores/c_casa.php?accion=add&idCasa=<?php echo $objCasa->id ?>&publicacion=<?php $propietario = $objCasa->getPropietario(); if ($propietario == $usuario->id){ echo true;} ?>","_self");
                                         }
                                     }
                                 </script>
@@ -83,12 +83,12 @@
                         if ($publicacion == true) { ?>
                             <div class="col-1">
                                 <a href="../Controladores/c_publicar.php?idCasa=<?php echo $objCasa->id ?>">
-                                    <i class="fa-solid fa-pen-to-square icono cursor"></i>
+                                    <i title="Editar oferta" class="fa-solid fa-pen-to-square icono cursor"></i>
                                 </a>
                             </div>
                             <div class="col-1">
                                 <a href="../Controladores/c_publicar.php?borrar=true&idCasa=<?php echo $objCasa->id ?>">
-                                    <i class="fa-solid fa-trash icono cursor"></i>
+                                    <i title="Eliminar oferta" class="fa-solid fa-trash icono cursor"></i>
                                 </a>
                             </div>
                     </div>

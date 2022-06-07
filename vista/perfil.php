@@ -53,13 +53,13 @@
                                             <h5><?php echo $casasFavoritas[$i]->getTipo() ?>/<?php echo $casasFavoritas[$i]->getOferta() ?></h5>
                                         </div>
                                         <div class='col-12'>
-                                            <p><?php echo $casasFavoritas[$i]->getPrecio() ?>€</p>
+                                            <p><?php echo $casasFavoritas[$i]->getPrecio() ?><i class="fa-solid fa-euro-sign"></i></p>
                                         </div>
                                         <div class='col-3'>
-                                            <p><?php echo $casasFavoritas[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
+                                            <p title="Habitaciones"><?php echo $casasFavoritas[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
                                         </div>
                                         <div class='col-3'>
-                                            <p><?php echo $casasFavoritas[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
+                                            <p title="Metros Cuadrados"><?php echo $casasFavoritas[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
                                         </div>
                                         <div class='col-12'>
                                             <p><?php echo $casasFavoritas[$i]->getProvincia() ?> <i class="fa-solid fa-map-location-dot"></i></p>
@@ -115,13 +115,13 @@
                                             <h5><?php echo $publicaciones[$i]->getTipo() ?>/<?php echo $publicaciones[$i]->getOferta() ?></h5>
                                         </div>
                                         <div class='col-12'>
-                                            <p><?php echo $publicaciones[$i]->getPrecio() ?>€</p>
+                                            <p><?php echo $publicaciones[$i]->getPrecio() ?><i class="fa-solid fa-euro-sign"></i></p>
                                         </div>
                                         <div class='col-3'>
-                                            <p><?php echo $publicaciones[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
+                                            <p title="Habitaciones"><?php echo $publicaciones[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
                                         </div>
                                         <div class='col-3'>
-                                            <p><?php echo $publicaciones[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
+                                            <p title="Metros Cuadrados"><?php echo $publicaciones[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
                                         </div>
                                         <div class='col-12'>
                                             <p><?php echo $publicaciones[$i]->getProvincia() ?> <i class="fa-solid fa-map-location-dot"></i></p>

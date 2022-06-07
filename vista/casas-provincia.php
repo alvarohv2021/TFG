@@ -52,13 +52,13 @@
                             <h5><?php echo $objCasasProvincia[$i]->getTipo() ?>/<?php echo $objCasasProvincia[$i]->getOferta() ?></h5>
                         </div>
                         <div class='col-12'>
-                            <p><?php echo $objCasasProvincia[$i]->getPrecio() ?>€</p>
+                            <p><?php echo $objCasasProvincia[$i]->getPrecio() ?><i class="fa-solid fa-euro-sign"></i></p>
                         </div>
                         <div class='col-4'>
-                            <p><?php echo $objCasasProvincia[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
+                            <p title="Habitaciones"><?php echo $objCasasProvincia[$i]->getHabitaciones() ?> <i class="fa-solid fa-bed"></i></p>
                         </div>
                         <div class='col-4'>
-                            <p><?php echo $objCasasProvincia[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
+                            <p title="Metros Cuadrados"><?php echo $objCasasProvincia[$i]->getMetrosCuadrados() ?> <i class="fa-solid fa-ruler-combined"></i></p>
                         </div>
                         <div class="col-12">
                             <p><?php echo $objCasasProvincia[0]->getProvincia() ?> <i class="fa-solid fa-map-location-dot"></i></p>
