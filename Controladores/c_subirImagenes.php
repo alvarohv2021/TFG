@@ -8,7 +8,7 @@ mkdir($ruta,0777,true);
 //Especifica el directorio donde se va ha guardar la imagen
 $target_dir = $ruta;
 
-//El lugar donde se encuentra la imagen que se va ha subir
+//El lugar donde se va ha subir la imagen
 $target_file = $target_dir . basename($_FILES["archivo"]["name"]);
 $uploadOk = 1;
 

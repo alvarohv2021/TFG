@@ -83,13 +83,13 @@ function addOrRemoveFromFavoritos($idUsuario, $idCasa, $accion)
     $coon->query($query);
 }
 
-function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario, $rutaImagen)
+function addCasa($tipo, $descipcionBreve, $descipcion = "", $habitaciones, $precio, $oferta, $metros, $idProvincia, $idPropietario)
 {
     global $coon;
 
 
-    $query = ("INSERT into casas(Tipo ,DescripcionBreve,Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario, RutaImagen) 
-        values('" . $tipo . "','" . $descipcionBreve . "','" . $descipcion . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . "," . $rutaImagen . ")");
+    $query = ("INSERT into casas(Tipo ,DescripcionBreve,Descripcion, Habitaciones, Precio, Oferta, Metros, Provincia, Propietario) 
+        values('" . $tipo . "','" . $descipcionBreve . "','" . $descipcion . "'," . $habitaciones . "," . $precio . ",'" . $oferta . "'," . $metros . "," . $idProvincia . "," . $idPropietario . ")");
 
     $coon->query($query);
 

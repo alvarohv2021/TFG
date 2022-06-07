@@ -4,7 +4,6 @@ error_reporting(E_ERROR | E_PARSE);
 include_once("../Entidades/Usuario.php");
 include_once("../Modelo/m_casas.php");
 
-
 session_start();
 
 $usuario = $_SESSION['Usuario'];
@@ -26,39 +25,24 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 
     $objCasa = getCasaById($_SESSION['idCasa']);
 
-    if (basename($_FILES["archivo"]["name"] != "")) {
-        //Borramos la imagen anterior para poner la nueva
-        unlink($objCasa->rutaImagen);
-        include_once("c_subirImagenes.php");
+    //Borramos la imagen anterior para poner la nueva
+    unlink($objCasa->rutaImagen);
 
-        updateCasa(
-            $_SESSION['idCasa'],
-            $_POST["tipo"],
-            $_POST["descripcionBreve"],
-            $_POST["descripcion"],
-            $_POST["habitaciones"],
-            $_POST["precio"],
-            $_POST["oferta"],
-            $_POST["metros"],
-            $_POST["idProvincia"],
-            $usuario->id,
-            $target_file
-        );
-    } else {
-        updateCasa(
-            $_SESSION['idCasa'],
-            $_POST["tipo"],
-            $_POST["descripcionBreve"],
-            $_POST["descripcion"],
-            $_POST["habitaciones"],
-            $_POST["precio"],
-            $_POST["oferta"],
-            $_POST["metros"],
-            $_POST["idProvincia"],
-            $usuario->id,
-            $objCasa->rutaImagen
-        );
-    }
+    include_once("c_subirImagenes.php");
+
+    updateCasa(
+        $_SESSION['idCasa'],
+        $_POST["tipo"],
+        $_POST["descripcionBreve"],
+        $_POST["descripcion"],
+        $_POST["habitaciones"],
+        $_POST["precio"],
+        $_POST["oferta"],
+        $_POST["metros"],
+        $_POST["idProvincia"],
+        $usuario->id,
+        $target_file
+    );
 
     unset($_SESSION['idCasa']);
 
@@ -69,7 +53,7 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 
 
 
-    $idCasa = addCasa(
+    $_SESSION['idCasa'] = addCasa(
         $_POST["tipo"],
         $_POST["descripcionBreve"],
         $_POST["descripcion"],
@@ -78,14 +62,13 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
         $_POST["oferta"],
         $_POST["metros"],
         $_POST["idProvincia"],
-        $usuario->id,
-        $target_file
+        $usuario->id
     );
 
-    include_once("c_subirImagenes.php?idCasa=" . $idCasa);
+    include_once("c_subirImagenes.php");
 
     updateCasa(
-        $idCasa,
+        $_SESSION['idCasa'],
         $_POST["tipo"],
         $_POST["descripcionBreve"],
         $_POST["descripcion"],
@@ -98,6 +81,7 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
         $target_file
     );
 
+    unset($_SESSION['idCasa']);
     header("Location: ../Controladores/c_casas.php?idProvincia=" . $_POST["idProvincia"] . "&hola");
 }
 include_once("../Modelo/m_provincias.php");
