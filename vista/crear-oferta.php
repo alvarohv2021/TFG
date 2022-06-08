@@ -92,7 +92,7 @@
             </div>
             <div class="row p-4">
                 <div class="col-6 offset-3">
-                    <input class="btn-submit" type="submit" value="Submit">
+                    <input class="btn-submit" type="submit" value="Listo">
                 </div>
             </div>
             <div class="row">

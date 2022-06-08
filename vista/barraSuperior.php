@@ -3,7 +3,7 @@
         <div class="row text-center">
             <div class="col-lg-6 col-12">
                 <a href="../Controladores/c_provincias.php">
-                    <h1>Spain Travels</h1>
+                    <h1>Spain Homes</h1>
                 </a>
             </div>
             <?php
