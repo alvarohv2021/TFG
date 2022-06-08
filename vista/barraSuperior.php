@@ -9,7 +9,7 @@
             <?php
             if (isset($usuario)) { ?>
                 <div class='col-lg-2 col-sm-4 col-12 pt-3'>
-                    <a href='../Controladores/c_publicar.php'>
+                    <a href='../Controladores/c_publicar.php?publicar=true'>
                         <p>Publicar Oferta</p>
                     </a>
                 </div>

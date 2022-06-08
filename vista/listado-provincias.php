@@ -22,7 +22,7 @@
                                 <td title="Provincia"> <?php echo $objProvincias[$i]->getNombre() ?> </td>
                                 <td title="Población"> <?php echo $objProvincias[$i]->getPoblacion() ?> <i class="fa-solid fa-users"></i></td>
                                 <td title="Densidad de poblacion (hab/km2)"> <?php echo $objProvincias[$i]->getDensidad() ?> <i class="fa-solid fa-users-rectangle"></i></td>
-                                <td title="Superficie (hab/km2)"> <?php echo $objProvincias[$i]->getSuperficie() ?> <i class="fa-solid fa-ruler-combined"></i></td>
+                                <td title="Superficie (km2)"> <?php echo $objProvincias[$i]->getSuperficie() ?> <i class="fa-solid fa-ruler-combined"></i></td>
                                 <td title="Ofertas"> <?php echo $numOfertas ?> <i class="fa-solid fa-house"></i></td>
                             </tr>
 

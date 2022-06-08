@@ -6,6 +6,10 @@ include_once("../Modelo/m_casas.php");
 
 session_start();
 
+if (isset($_GET['publicar'])) {
+    unset($_SESSION['idCasa']);
+}
+
 $usuario = $_SESSION['Usuario'];
 //Compruebo si quiere borrar una casa
 if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
@@ -22,10 +26,10 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 
     /*Comprobacion si es un update*/
 } else if (isset($_SESSION['idCasa'])) {
-    
+
     $objCasa = getCasaById($_SESSION['idCasa']);
 
-    if ($_FILES["archivo"]["name"]!="") {
+    if ($_FILES["archivo"]["name"] != "") {
 
         //Borramos la imagen anterior para poner la nueva
         unlink($objCasa->rutaImagen);
@@ -47,7 +51,7 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
         );
 
         unset($_SESSION['idCasa']);
-    }else {
+    } else {
 
         updateCasa(
             $_SESSION['idCasa'],
