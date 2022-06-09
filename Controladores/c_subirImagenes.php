@@ -3,13 +3,18 @@ error_reporting(E_ERROR | E_PARSE);
 
 //Crea una carpeta, dentro de la ya creada imagenes, con el nombre especificado
 $ruta = "../imagenes/" . $_SESSION['Usuario']->username . "/" . $_SESSION['idCasa'] . "/";
-mkdir($ruta,0777,true);
+mkdir($ruta, 0777, true);
 
 //Especifica el directorio donde se va ha guardar la imagen
 $target_dir = $ruta;
 
 //El lugar donde se va ha subir la imagen
-$target_file = $target_dir . basename($_FILES["archivo"]["name"]);
+if (basename($_FILES["archivo"]["name"] == "")) {
+    $target_file = "../imagenes/icono/noImage.jpg";
+} else {
+
+    $target_file = $target_dir . basename($_FILES["archivo"]["name"]);
+}
 $uploadOk = 1;
 
 //Guardar el tipo de archivo de la imagen subida en lower case
@@ -22,6 +27,7 @@ if (isset($_POST["submit"])) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
+
         echo "File is not an image.";
         $uploadOk = 0;
     }

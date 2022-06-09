@@ -14,7 +14,14 @@ $usuario = $_SESSION['Usuario'];
 //Compruebo si quiere borrar una casa
 if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
 
-    deleteCasa($_GET["idCasa"]);
+    $casa = getCasaById($_GET["idCasa"]);
+
+    $directorio = "../imagenes/" . $_SESSION['Usuario']->username . "/" . $casa->id;
+    if (rmdir($directorio)) {
+        deleteCasa($_GET["idCasa"]);
+    };
+
+
 
     header("Location: ../Controladores/c_provincias.php");
 } else if (isset($_GET["idCasa"])) {
