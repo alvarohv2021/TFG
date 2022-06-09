@@ -10,16 +10,11 @@ tr:hover {
 
 }
 
-tr:first-child:hover {
-    border-radius: 25px 25px 0px 0px;
-}
-
 .cursor {
     cursor: pointer;
 }
 
-table,
-tbody {
+table {
     box-shadow: 5px 5px 5px gray;
     border-radius: 25px 25px 0px 0px;
 }

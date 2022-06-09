@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <table class="table table-responsive bazul negro">
+                <table class="table table-responsive bazul">
                     <?php
                     for ($i = 0; $i < count($objProvincias); $i++) {
                         $numOfertas = $objProvincias[$i]->getNumOfertas();
