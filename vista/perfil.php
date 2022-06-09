@@ -135,8 +135,14 @@
             </div>
         </div>
     <?php } else { ?>
-        <div class="container bmarron">
-            <h1>No has hecho ninguna publicación todavía</h1>
+        <div id="Publicaciones" class="contenido mt-4">
+            <div class='container casasProvincia bmarron pt-1 mt-4'>
+                <div class="row ">
+                    <div class="col-12 ">
+                        <h1>No has hecho ninguna publicación todavía</h1>
+                    </div>
+                </div>
+            </div>
         </div>
     <?php } ?>
 
