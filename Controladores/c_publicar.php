@@ -17,7 +17,11 @@ if (isset($_GET["borrar"]) && $_GET["borrar"] == true) {
     $casa = getCasaById($_GET["idCasa"]);
 
     $directorio = "../imagenes/" . $_SESSION['Usuario']->username . "/" . $casa->id;
-    if (rmdir($directorio)) {
+    $rutaImgCasa=$casa->getRutaImagen();
+    
+    unlink($casa->rutaImagen);
+
+    if (rmdir($directorio) | rmdir($rutaImgCasa)) {
         deleteCasa($_GET["idCasa"]);
     };
 
