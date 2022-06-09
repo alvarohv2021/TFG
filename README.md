@@ -9,10 +9,3 @@
 <img src="/imagenes/README/apache.png"></img>
 <p>Una vez iniciado, guardamos, extraemos o clonamos el repositorio dentro de la ruta: C:\xampp\htdocs.</p><br>
 <p>Si una vez completado esto no ha dado ningún problema podremos poner en el buscador de firefox <a href="http://localhost/TFG/Controladores/c_provincias.php ">http://localhost/TFG/Controladores/c_provincias.php</a> </p><br>
-
-
-
-
-
-
- 

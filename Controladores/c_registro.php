@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../Modelo/m_usuario.php");
 
 if (isset($_POST['password'])) {
@@ -32,5 +33,5 @@ if (isset($_POST['password'])) {
 
         $cPassword = true;
     }
-    header("Location: ../Vista/registro.php?cPassword=" . $cPassword . "&usuarioUsado=" . $usuarioUsado . "&correoUsado=" . $correoUsado);
+   header("Location: ../Vista/registro.php?cPassword=" . $cPassword . "&usuarioUsado=" . $usuarioUsado . "&correoUsado=" . $correoUsado);
 }
