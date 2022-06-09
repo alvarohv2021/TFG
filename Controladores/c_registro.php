@@ -33,5 +33,8 @@ if (isset($_POST['password'])) {
 
         $cPassword = true;
     }
-   header("Location: ../Vista/registro.php?cPassword=" . $cPassword . "&usuarioUsado=" . $usuarioUsado . "&correoUsado=" . $correoUsado);
+    
+    if (!isset($_SESSION['Usuario']) | $_SESSION['Usuario']->id == 0) {
+        header("Location: ../Vista/registro.php?cPassword=" . $cPassword . "&usuarioUsado=" . $usuarioUsado . "&correoUsado=" . $correoUsado);
+    }
 }
